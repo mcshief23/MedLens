@@ -3,111 +3,120 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080d15">
-<title>MedLens — Clinical Intelligence</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070e18">
+<title>МедАналитик — анализ жалоб и симптомов</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 :root{
-  --bg:#080d15;--panel:#111c2a;--panel2:#162333;
-  --line:#283c50;--text:#edf7ff;--muted:#8ba0b5;
-  --accent:#78e5d4;--blue:#8cafff;--danger:#ff9ca5;
+--bg:#070e18;--panel:#101d2c;--panel2:#162739;
+--line:#2a4154;--text:#eefaff;--muted:#94aabd;
+--accent:#7aebd7;--blue:#8faeff;--danger:#ffabb1
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,sans-serif;overflow-x:hidden}
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 button:disabled{opacity:.45;cursor:not-allowed}
 #particles{position:fixed;inset:0;width:100%;height:100%;z-index:-3;pointer-events:none}
-.ambient{position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 80% 5%,#23526c35,transparent 55%),radial-gradient(ellipse at 0% 90%,#214f5330,transparent 55%)}
-.grid-bg{position:fixed;inset:0;z-index:-1;opacity:.12;pointer-events:none;background-image:linear-gradient(#749ab1 1px,transparent 1px),linear-gradient(90deg,#749ab1 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(#000,transparent 90%)}
-.app{display:grid;grid-template-columns:242px minmax(0,1fr);min-height:100vh}
-.sidebar{position:sticky;top:0;height:100vh;padding:27px 16px;background:#0a111ce8;backdrop-filter:blur(20px);border-right:1px solid var(--line);display:flex;flex-direction:column;z-index:10}
-.brand{display:flex;align-items:center;gap:12px;padding:5px 10px;font:700 24px 'Space Grotesk';letter-spacing:-1px}
-.brand-mark{width:37px;height:37px;border:1px solid #78e5d47a;border-radius:11px;display:grid;place-items:center;color:var(--accent);font-size:22px}
-.side-label{font-size:10px;letter-spacing:2px;color:#647c91;margin:46px 10px 14px}
-.nav{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:14px 12px;margin:3px 0;border:1px solid transparent;border-radius:12px;background:transparent;color:var(--muted);font-size:12px;transition:.2s}
-.nav span{font:500 10px 'Space Grotesk';opacity:.7}
-.nav.active{background:#78e5d412;border-color:#78e5d43b;color:var(--accent)}
-.nav:hover{background:#1c2d3e}
-.side-footer{margin-top:auto;padding:18px 10px;border-top:1px solid var(--line);font-size:10px;line-height:2;color:var(--muted)}
-.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);margin-right:8px}
-.main{min-width:0;padding:28px clamp(16px,4vw,64px) 80px}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:45px}
-.eyebrow{color:var(--accent);font-size:10px;letter-spacing:2px;text-transform:uppercase}
-.top-actions{display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted)}
-.icon-btn{width:39px;height:39px;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--text);font-size:18px}
-.page{display:none;animation:pageIn .4s ease both}
+.ambient{position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 80% 4%,#1c6b7040,transparent 55%),radial-gradient(ellipse at 5% 95%,#344d8c30,transparent 55%)}
+.grid-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:linear-gradient(#7bb4bd 1px,transparent 1px),linear-gradient(90deg,#7bb4bd 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(#000,transparent 90%)}
+.app{display:grid;grid-template-columns:245px minmax(0,1fr);min-height:100vh}
+.sidebar{position:sticky;top:0;height:100vh;padding:27px 15px;background:#09121eeb;backdrop-filter:blur(24px);border-right:1px solid var(--line);display:flex;flex-direction:column;z-index:10}
+.brand{display:flex;align-items:center;gap:10px;padding:6px;font:700 21px 'Space Grotesk';letter-spacing:-.9px;white-space:nowrap}
+.brand-mark{width:39px;height:39px;flex-shrink:0;border:1px solid #7aebd780;border-radius:12px;display:grid;place-items:center;color:var(--accent);background:#7aebd710;box-shadow:0 0 23px #7aebd71c}
+.side-label{font-size:10px;letter-spacing:1.7px;color:#6b879b;margin:43px 10px 15px}
+.nav{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:14px 12px;margin:3px 0;border:1px solid transparent;border-radius:12px;background:transparent;color:var(--muted);font-size:12px;transition:.25s}
+.nav span{font:500 10px 'Space Grotesk';opacity:.65}
+.nav.active{background:#7aebd415;border-color:#7aebd43b;color:var(--accent);box-shadow:inset 3px 0 var(--accent)}
+.nav:hover{background:#20364a}
+.side-footer{margin-top:auto;padding:17px 9px;border-top:1px solid var(--line);font-size:10px;line-height:2;color:var(--muted)}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);margin-right:7px}
+.main{min-width:0;padding:27px clamp(16px,4vw,65px) 80px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:42px}
+.eyebrow{color:var(--accent);font-size:10px;letter-spacing:1.8px;text-transform:uppercase}
+.top-actions{display:flex;align-items:center;gap:12px;font-size:10px;color:var(--muted)}
+.icon-btn{width:39px;height:39px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);font-size:19px}
+.page{display:none;animation:pageIn .45s ease both}
 .page.active{display:block}
-@keyframes pageIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 h1,h2,h3{font-family:'Space Grotesk';margin:0}
-h1{font-size:clamp(39px,5vw,67px);line-height:1.06;letter-spacing:-3px;font-weight:600}
+h1{font-size:clamp(40px,5.2vw,70px);line-height:1.07;letter-spacing:-3px;font-weight:600}
 h2{font-size:clamp(28px,3.5vw,43px);letter-spacing:-1.5px;font-weight:600}
-h3{font-size:17px}
 p{margin:0}
-.sub{font-size:13px;line-height:1.8;color:var(--muted);max-width:680px;margin-top:15px}
-.card{position:relative;background:linear-gradient(145deg,#172434f5,#0e1826f8);border:1px solid var(--line);border-radius:21px;padding:25px;overflow:hidden}
-.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,#ffffff06,transparent 55%)}
-.card-title{font-size:12px;font-weight:700;letter-spacing:.4px;margin-bottom:22px}
+.sub{font-size:13px;line-height:1.85;color:var(--muted);max-width:680px;margin-top:15px}
+.card{position:relative;background:linear-gradient(145deg,#192b3bf5,#0e1b2af8);border:1px solid var(--line);border-radius:22px;padding:25px;overflow:hidden;box-shadow:0 15px 45px #00000018}
+.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,#ffffff08,transparent 60%)}
+.card-title{font-size:12px;font-weight:800;letter-spacing:.4px;margin-bottom:21px}
 .mt{margin-top:20px}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field{margin-bottom:21px}
-.field label{display:block;color:#adc0d0;font-size:11px;margin-bottom:10px}
-input,textarea,select{width:100%;background:#0c1624;border:1px solid #31485e;color:var(--text);padding:15px;border-radius:12px;outline:none;transition:.2s}
-input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px #78e5d414}
-input::placeholder,textarea::placeholder{color:#60768b}
-textarea{min-height:120px;resize:vertical}
-.btn{border:1px solid var(--line);border-radius:12px;background:#1b2d3e;color:var(--text);padding:14px 20px;font-size:12px;font-weight:700;transition:.2s}
-.btn:hover:not(:disabled){transform:translateY(-2px);border-color:#6c96a1}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#07211d}
-.btn.primary:hover{box-shadow:0 8px 28px #78e5d42d}
+.field label{display:block;color:#b5cbd8;font-size:11px;margin-bottom:10px}
+input,textarea,select{width:100%;background:#0a1725;border:1px solid #355067;color:var(--text);padding:15px;border-radius:12px;outline:none;transition:.2s}
+input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px #7aebd414}
+input::placeholder,textarea::placeholder{color:#6b8195}
+textarea{min-height:116px;resize:vertical}
+.btn{border:1px solid var(--line);border-radius:12px;background:#1d3346;color:var(--text);padding:14px 20px;font-size:12px;font-weight:800;transition:.25s}
+.btn:hover:not(:disabled){transform:translateY(-2px);border-color:#75a4b2}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#07211d;box-shadow:0 8px 25px #7aebd41b}
+.btn.primary:hover{box-shadow:0 12px 32px #7aebd43a}
 .actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:25px}
 .choices{display:flex;gap:8px;flex-wrap:wrap}
-.choice{border:1px solid #344a60;border-radius:11px;background:#0c1624;color:#adbece;padding:12px 15px;font-size:12px}
-.choice.selected{color:var(--accent);background:#78e5d416;border-color:var(--accent)}
-.notice{border:1px solid #78e5d433;background:#78e5d40a;border-radius:13px;padding:16px;color:#abc5c3;font-size:11px;line-height:1.8}
-.hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:20px;min-height:405px}
-.hero h1 strong{color:var(--accent);font-weight:600}
+.choice{border:1px solid #385167;border-radius:11px;background:#0c1b2b;color:#b2c7d6;padding:12px 15px;font-size:12px}
+.choice.selected{color:var(--accent);background:#7aebd416;border-color:var(--accent)}
+.notice{border:1px solid #7aebd433;background:#7aebd40a;border-radius:13px;padding:16px;color:#b8d5d0;font-size:11px;line-height:1.8}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:20px;min-height:440px}
+.hero h1 strong{color:var(--accent);font-weight:600;text-shadow:0 0 45px #7aebd438}
 .hero .btn{margin-top:25px}
-.hero-visual{min-height:360px;display:grid;place-items:center;perspective:850px}
-.core{width:260px;height:260px;position:relative;transform-style:preserve-3d;animation:floatCore 6s ease-in-out infinite}
-.core-glow{position:absolute;inset:28px;border-radius:50%;background:radial-gradient(circle,#8ffff0,#2586a0 32%,transparent 70%);filter:blur(27px);opacity:.55}
-.core-ball{position:absolute;inset:50px;border-radius:50%;background:radial-gradient(circle at 29% 24%,#fff,transparent 9%),radial-gradient(circle at 34% 28%,#a3fff2,#28778e 40%,#0a162b 78%);box-shadow:inset -19px -25px 38px #050b18,0 0 55px #78e5d460;animation:ballPulse 4s ease-in-out infinite}
-.orbit{position:absolute;inset:10px;border:1.5px solid #78e5d480;border-radius:50%;transform-style:preserve-3d}
-.orbit.a{animation:orbitA 10s linear infinite}
+.hero-visual{min-height:390px;display:grid;place-items:center;perspective:1000px;overflow:visible}
+.core{width:300px;height:300px;position:relative;transform-style:preserve-3d;animation:floatCore 7s ease-in-out infinite;filter:drop-shadow(0 25px 35px #0006)}
+.core-glow{position:absolute;inset:20px;border-radius:50%;background:radial-gradient(circle,#aafff0,#237f9c 35%,transparent 72%);filter:blur(34px);opacity:.52;animation:glowPulse 5s ease-in-out infinite}
+.core-ball{position:absolute;inset:57px;border-radius:50%;background:radial-gradient(circle at 28% 23%,#fff,transparent 8%),radial-gradient(circle at 32% 29%,#d4fff7,#67c8c5 20%,#20627d 47%,#0b1931 80%);box-shadow:inset -23px -28px 40px #030a18,0 0 65px #7aebd45a;animation:ballPulse 4s ease-in-out infinite}
+.core-ball:after{content:"";position:absolute;inset:15px;border-radius:50%;border:1px solid #ffffff30;transform:rotateX(65deg);box-shadow:0 0 18px #7aebd455}
+.orbit{position:absolute;inset:13px;border:1.5px solid #7aebd47a;border-radius:50%;transform-style:preserve-3d}
+.orbit.a{animation:orbitA 11s linear infinite}
 .orbit.b{animation:orbitB 13s linear infinite}
-.orbit.c{animation:orbitC 16s linear infinite}
-.orbit:after{content:"";position:absolute;top:15%;left:13%;width:9px;height:9px;background:var(--accent);border-radius:50%;box-shadow:0 0 18px var(--accent)}
+.orbit.c{animation:orbitC 17s linear infinite}
+.orbit.d{inset:33px;border-color:#8faeff75;animation:orbitD 9s linear infinite}
+.orbit:after{content:"";position:absolute;top:14%;left:12%;width:9px;height:9px;background:var(--accent);border-radius:50%;box-shadow:0 0 19px var(--accent)}
+.orbit.d:after{background:var(--blue);box-shadow:0 0 19px var(--blue)}
+.core-ring{position:absolute;inset:-18px;border:1px dashed #7aebd42e;border-radius:50%;animation:spin 30s linear infinite}
+.core-satellite{position:absolute;width:7px;height:7px;background:#d9fff8;border-radius:50%;top:17%;right:13%;box-shadow:0 0 16px var(--accent);animation:satellite 4s ease-in-out infinite}
 @keyframes orbitA{from{transform:rotateX(72deg) rotateZ(0)}to{transform:rotateX(72deg) rotateZ(360deg)}}
 @keyframes orbitB{from{transform:rotateY(70deg) rotateZ(0)}to{transform:rotateY(70deg) rotateZ(360deg)}}
 @keyframes orbitC{from{transform:rotateX(45deg) rotateY(45deg) rotateZ(0)}to{transform:rotateX(45deg) rotateY(45deg) rotateZ(-360deg)}}
-@keyframes floatCore{50%{transform:translateY(-17px) rotateY(12deg)}}
-@keyframes ballPulse{50%{filter:brightness(1.25)}}
+@keyframes orbitD{from{transform:rotateX(30deg) rotateY(70deg) rotateZ(0)}to{transform:rotateX(30deg) rotateY(70deg) rotateZ(360deg)}}
+@keyframes floatCore{0%,100%{transform:translateY(0) rotateY(-9deg) rotateX(4deg)}50%{transform:translateY(-20px) rotateY(14deg) rotateX(-6deg)}}
+@keyframes ballPulse{50%{filter:brightness(1.27) saturate(1.25)}}
+@keyframes glowPulse{50%{opacity:.8;transform:scale(1.13)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes satellite{50%{transform:translate(12px,-10px);opacity:.5}}
 .core.thinking .orbit{animation-duration:2s}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}
-.stat{background:#101b29;border:1px solid var(--line);border-radius:16px;padding:21px}
-.stat strong{display:block;font:600 23px 'Space Grotesk';color:var(--accent);margin-bottom:7px}
+.stat{background:linear-gradient(135deg,#132638,#0d1928);border:1px solid var(--line);border-radius:17px;padding:22px}
+.stat strong{display:block;font:600 25px 'Space Grotesk';color:var(--accent);margin-bottom:7px}
 .stat span{font-size:11px;color:var(--muted)}
 .anatomy-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.85fr);gap:18px}
-.anatomy-stage{position:relative;min-height:590px;border:1px solid var(--line);border-radius:20px;padding:18px;overflow:hidden;background:radial-gradient(ellipse at center,#1b3747,#0a1320 75%)}
+.anatomy-stage{position:relative;min-height:590px;border:1px solid var(--line);border-radius:22px;padding:18px;overflow:hidden;background:radial-gradient(ellipse at center,#204657,#0a1523 75%)}
 .anatomy-stage:before{content:"";position:absolute;inset:0;opacity:.2;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 35px,#477284 36px),repeating-linear-gradient(90deg,transparent 0 35px,#477284 36px);mask-image:radial-gradient(ellipse,#000,transparent 75%)}
+.anatomy-stage:after{content:"";position:absolute;width:250px;height:250px;left:50%;top:45%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid #7aebd41a;box-shadow:0 0 0 45px #7aebd408,0 0 0 90px #7aebd405;pointer-events:none}
 .model-toolbar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:8px}
 .model-switch{display:flex;gap:5px}
 .model-switch button{padding:9px 12px;background:#102334;color:#a6bdcb;border:1px solid #3a5667;border-radius:9px;font-size:10px}
 .model-switch button.active{background:var(--accent);color:#09211d;border-color:var(--accent)}
-.human-wrap{position:relative;height:485px;display:grid;place-items:center;perspective:900px}
-.human-model{height:460px;max-width:100%;overflow:visible;filter:drop-shadow(0 0 24px #5cd6d72b);animation:humanFloat 5s ease-in-out infinite}
-@keyframes humanFloat{50%{transform:translateY(-9px)}}
-.human-model .region{fill:#254254;stroke:#8cbfcb;stroke-width:1.5;stroke-linejoin:round;cursor:pointer;transition:.2s}
-.human-model .region:hover{fill:#438b92;filter:drop-shadow(0 0 7px var(--accent))}
-.human-model .region.selected{fill:#70e6d2;stroke:#e4fff9;filter:drop-shadow(0 0 9px var(--accent))}
+.human-wrap{position:relative;height:485px;display:grid;place-items:center;perspective:950px;z-index:1}
+.human-model{height:460px;max-width:100%;overflow:visible;filter:drop-shadow(0 0 26px #5cd6d74b);animation:humanFloat 5s ease-in-out infinite;transition:transform .6s}
+@keyframes humanFloat{50%{transform:translateY(-9px) rotateY(4deg)}}
+.human-model .region{fill:#254b5c;stroke:#91c7cf;stroke-width:1.5;stroke-linejoin:round;cursor:pointer;transition:.22s}
+.human-model .region:hover{fill:#4ba0a2;filter:drop-shadow(0 0 9px var(--accent))}
+.human-model .region.selected{fill:#70e6d2;stroke:#e4fff9;filter:drop-shadow(0 0 10px var(--accent))}
 .human-model .detail{fill:none;stroke:#83b6c1;stroke-width:1.2;opacity:.8;pointer-events:none}
 .human-model .skeleton{fill:none;stroke:#c5edf0;stroke-width:.9;opacity:.3;pointer-events:none}
-.model-caption{position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#91b4c0;font-size:10px;letter-spacing:1px}
+.model-caption{position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#9ec4cd;font-size:10px;letter-spacing:1px}
 .zone-list{display:flex;flex-wrap:wrap;gap:7px}
 .zone-tag{padding:10px 12px;border:1px solid #344b5f;border-radius:9px;background:#0d1927;color:#acbece;font-size:10px}
-.zone-tag.selected{border-color:var(--accent);background:#78e5d419;color:var(--accent)}
+.zone-tag.selected{border-color:var(--accent);background:#7aebd419;color:var(--accent)}
 .pain-scale{display:grid;grid-template-columns:repeat(11,1fr);gap:4px}
 .pain-scale button{min-width:0;padding:10px 0;background:#0c1624;border:1px solid var(--line);border-radius:8px;color:var(--muted);font-size:10px}
 .pain-scale button.selected{background:var(--accent);color:#08201d}
@@ -124,12 +133,12 @@ textarea{min-height:120px;resize:vertical}
 .message.user .message-label{text-align:right;color:var(--blue)}
 .message-content{padding:16px 19px;background:#1b2b3d;border:1px solid #30485c;border-radius:15px 15px 15px 4px;font-size:13px;line-height:1.75;white-space:pre-wrap}
 .message.user .message-content{background:#24404f;border-color:#38616d;border-radius:15px 15px 4px 15px}
-.chat-compose{display:grid;grid-template-columns:1fr 90px;gap:9px;padding-top:16px;border-top:1px solid var(--line)}
-.chat-compose button{border:0;border-radius:11px;background:var(--accent);color:#09211d;font-weight:700;font-size:12px}
-.ai-indicator{position:relative;width:110px;height:110px;margin:15px auto 27px;display:grid;place-items:center}
+.chat-compose{display:grid;grid-template-columns:1fr 95px;gap:9px;padding-top:16px;border-top:1px solid var(--line)}
+.chat-compose button{border:0;border-radius:11px;background:var(--accent);color:#09211d;font-weight:800;font-size:11px}
+.ai-indicator{position:relative;width:115px;height:115px;margin:15px auto 27px;display:grid;place-items:center}
 .ai-indicator:before,.ai-indicator:after{content:"";position:absolute;inset:8px;border:1px solid var(--accent);border-radius:50%;animation:orbitA 8s linear infinite}
 .ai-indicator:after{inset:0;border-color:var(--blue);animation:orbitB 9s linear infinite}
-.ai-indicator div{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#cafff6,#2997a2 48%,#102943 85%);box-shadow:0 0 29px #338e9d}
+.ai-indicator div{width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#e0fff9,#45bdc2 40%,#102943 85%);box-shadow:0 0 36px #338e9d}
 .ai-indicator.thinking:before,.ai-indicator.thinking:after{animation-duration:1.5s}
 .progress-track{height:5px;overflow:hidden;border-radius:10px;background:#263749}
 .progress-fill{height:100%;width:0;background:var(--accent);transition:width .25s}
@@ -151,12 +160,11 @@ textarea{min-height:120px;resize:vertical}
 .toast{position:fixed;z-index:100;bottom:24px;left:50%;transform:translate(-50%,20px);max-width:90vw;padding:14px 20px;border:1px solid #3d6b71;border-radius:12px;background:#17313b;color:#eafffb;font-size:12px;opacity:0;pointer-events:none;transition:.25s;box-shadow:0 15px 45px #0008}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:1050px){.app{grid-template-columns:190px minmax(0,1fr)}.sidebar{padding:24px 10px}.anatomy-layout,.chat-layout{grid-template-columns:1fr}}
-@media(max-width:750px){.app{display:block}.sidebar{position:sticky;top:0;height:auto;padding:12px 14px;flex-direction:row;align-items:center;gap:9px;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}.brand{font-size:18px;white-space:nowrap;padding:0}.brand-mark{width:31px;height:31px}.side-label,.side-footer{display:none}.nav{width:auto;flex:0 0 auto;padding:10px;font-size:10px;white-space:nowrap}.main{padding:23px 15px 60px}.topbar{margin-bottom:30px}.hero{grid-template-columns:1fr}.hero-visual{min-height:280px}.cols,.report-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.card{padding:18px}.anatomy-stage{min-height:565px}}
+@media(max-width:750px){.app{display:block}.sidebar{position:sticky;top:0;height:auto;padding:12px 14px;flex-direction:row;align-items:center;gap:9px;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}.brand{font-size:18px;white-space:nowrap;padding:0}.brand-mark{width:31px;height:31px}.side-label,.side-footer{display:none}.nav{width:auto;flex:0 0 auto;padding:10px;font-size:10px;white-space:nowrap}.main{padding:23px 15px 60px}.topbar{margin-bottom:30px}.hero{grid-template-columns:1fr}.hero-visual{min-height:310px}.core{transform:scale(.88);animation:floatCore 7s ease-in-out infinite}.cols,.report-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.card{padding:18px}.anatomy-stage{min-height:565px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
-
 <canvas id="particles"></canvas>
 <div class="ambient"></div>
 <div class="grid-bg"></div>
@@ -164,286 +172,225 @@ textarea{min-height:120px;resize:vertical}
 
 <div class="app">
 <aside class="sidebar">
-  <div class="brand"><div class="brand-mark">M</div>MedLens</div>
-  <div class="side-label">CLINICAL WORKFLOW</div>
-  <button class="nav active" data-page="home"><span>00</span>Обзор</button>
-  <button class="nav" data-page="patient"><span>01</span>Пациент</button>
-  <button class="nav" data-page="symptoms"><span>02</span>Симптомы</button>
-  <button class="nav" data-page="interview"><span>03</span>AI-интервью</button>
-  <button class="nav" data-page="history"><span>04</span>Анамнез</button>
-  <button class="nav" data-page="analysis"><span>05</span>Анализ</button>
-  <div class="side-footer">
-    <div><span class="dot"></span>SYSTEM ACTIVE</div>
-    <div>MEDLENS / VERSION 2.1</div>
-    <div>EDUCATIONAL PROTOTYPE</div>
-  </div>
+<div class="brand"><div class="brand-mark">М</div>МедАналитик</div>
+<div class="side-label">РАЗДЕЛЫ СИСТЕМЫ</div>
+<button class="nav active" data-page="home"><span>00</span>Обзор</button>
+<button class="nav" data-page="patient"><span>01</span>Пациент</button>
+<button class="nav" data-page="symptoms"><span>02</span>Симптомы</button>
+<button class="nav" data-page="interview"><span>03</span>Опрос с ИИ</button>
+<button class="nav" data-page="history"><span>04</span>Анамнез</button>
+<button class="nav" data-page="analysis"><span>05</span>Анализ</button>
+<div class="side-footer">
+<div><span class="dot"></span>СИСТЕМА АКТИВНА</div>
+<div>МЕДАНАЛИТИК / ВЕРСИЯ 3.0</div>
+<div>УЧЕБНЫЙ ПРОЕКТ</div>
+</div>
 </aside>
 
 <main class="main">
-  <div class="topbar">
-    <div class="eyebrow">MEDLENS / CLINICAL INTELLIGENCE</div>
-    <div class="top-actions">
-      <span id="topStatus">SYSTEM READY</span>
-      <button class="icon-btn" id="restart" title="Новая сессия" aria-label="Новая сессия">↻</button>
-    </div>
-  </div>
+<div class="topbar">
+<div class="eyebrow">МЕДАНАЛИТИК / АНАЛИЗ СИМПТОМОВ</div>
+<div class="top-actions"><span id="topStatus">СИСТЕМА ГОТОВА</span><button class="icon-btn" id="restart" title="Новая сессия">↻</button></div>
+</div>
 
-  <section class="page active" id="page-home">
-    <div class="hero">
-      <div>
-        <div class="eyebrow" style="margin-bottom:18px">INTELLIGENT PATIENT INTAKE</div>
-        <h1>Медицина.<br>Данные.<br><strong>Интеллект.</strong></h1>
-        <p class="sub">MedLens помогает структурировать жалобы: отмечайте область боли на анатомической карте, отвечайте на короткие вопросы и формируйте сводку для врача.</p>
-        <button class="btn primary" id="begin">НАЧАТЬ СЕССИЮ</button>
-      </div>
-      <div class="hero-visual">
-        <div class="core" id="heroCore">
-          <div class="core-glow"></div>
-          <div class="orbit a"></div><div class="orbit b"></div><div class="orbit c"></div>
-          <div class="core-ball"></div>
-        </div>
-      </div>
-    </div>
-    <div class="stats">
-      <div class="stat tilt"><strong>01</strong><span>Анатомическая карта</span></div>
-      <div class="stat tilt"><strong>02</strong><span>До 4 вопросов</span></div>
-      <div class="stat tilt"><strong>03</strong><span>Структурированный отчёт</span></div>
-    </div>
-    <div class="notice mt">MedLens — учебный прототип, не медицинское изделие. Он не ставит диагноз и не определяет вероятность заболевания. Не используйте его вместо срочной медицинской помощи.</div>
-  </section>
+<section class="page active" id="page-home">
+<div class="hero">
+<div>
+<div class="eyebrow" style="margin-bottom:18px">ИНТЕЛЛЕКТУАЛЬНЫЙ АНАЛИЗ ЖАЛОБ</div>
+<h1>Медицина.<br>Данные.<br><strong>Интеллект.</strong></h1>
+<p class="sub">МедАналитик помогает описать симптомы, отметить область боли на интерактивной карте тела, ответить на уточняющие вопросы и сформировать понятную сводку для врача.</p>
+<button class="btn primary" id="begin">НАЧАТЬ АНАЛИЗ →</button>
+</div>
+<div class="hero-visual">
+<div class="core" id="heroCore">
+<div class="core-glow"></div>
+<div class="core-ring"></div>
+<div class="orbit a"></div><div class="orbit b"></div><div class="orbit c"></div><div class="orbit d"></div>
+<div class="core-ball"></div><div class="core-satellite"></div>
+</div>
+</div>
+</div>
+<div class="stats">
+<div class="stat tilt"><strong>01</strong><span>Интерактивная карта тела</span></div>
+<div class="stat tilt"><strong>02</strong><span>До четырёх вопросов</span></div>
+<div class="stat tilt"><strong>03</strong><span>Подробный отчёт</span></div>
+</div>
+<div class="notice mt">МедАналитик — учебный проект, а не медицинское изделие. Он не ставит диагноз и не определяет вероятность заболеваний. При опасных симптомах необходимо обращаться за медицинской помощью.</div>
+</section>
 
-  <section class="page" id="page-patient">
-    <div class="eyebrow">01 / PATIENT</div>
-    <h2 style="margin-top:13px">Информация о пациенте</h2>
-    <p class="sub">Базовые сведения для контекста интервью.</p>
-    <div class="card mt">
-      <div class="cols">
-        <div class="field">
-          <label for="age">Возраст</label>
-          <input id="age" type="number" min="1" max="120" placeholder="Укажите возраст">
-        </div>
-        <div class="field">
-          <label>Пол</label>
-          <div class="choices" id="sexChoices">
-            <button class="choice" data-sex="Мужской">Мужской</button>
-            <button class="choice" data-sex="Женский">Женский</button>
-            <button class="choice" data-sex="Не указан">Не указывать</button>
-          </div>
-        </div>
-      </div>
-      <div class="notice">Информация используется для текущей сессии. Вводить настоящее имя и другие идентифицирующие сведения не требуется.</div>
-      <div class="actions">
-        <button class="btn" data-go="home">НАЗАД</button>
-        <button class="btn primary" data-go="symptoms">ПРОДОЛЖИТЬ</button>
-      </div>
-    </div>
-  </section>
+<section class="page" id="page-patient">
+<div class="eyebrow">01 / ПАЦИЕНТ</div>
+<h2 style="margin-top:13px">Информация о пациенте</h2>
+<p class="sub">Укажите основные сведения, которые помогут уточнить описание симптомов.</p>
+<div class="card mt">
+<div class="cols">
+<div class="field"><label for="age">Возраст</label><input id="age" type="number" min="1" max="120" placeholder="Укажите возраст"></div>
+<div class="field"><label>Пол</label><div class="choices">
+<button class="choice" data-sex="Мужской">Мужской</button>
+<button class="choice" data-sex="Женский">Женский</button>
+<button class="choice" data-sex="Не указан">Не указывать</button>
+</div></div>
+</div>
+<div class="notice">Указывать настоящее имя не требуется. Данные используются в рамках текущей сессии браузера.</div>
+<div class="actions"><button class="btn" data-go="home">НАЗАД</button><button class="btn primary" data-go="symptoms">ПРОДОЛЖИТЬ</button></div>
+</div>
+</section>
 
-  <section class="page" id="page-symptoms">
-    <div class="eyebrow">02 / BODY MAPPING</div>
-    <h2 style="margin-top:13px">Где ощущается боль?</h2>
-    <p class="sub">Нажмите на нужные части тела. Можно выбрать несколько областей и переключаться между видом спереди и сзади.</p>
-    <div class="anatomy-layout mt">
-      <div class="anatomy-stage">
-        <div class="model-toolbar">
-          <span class="eyebrow">ANATOMICAL MAP</span>
-          <div class="model-switch">
-            <button class="active" data-view="front">СПЕРЕДИ</button>
-            <button data-view="back">СЗАДИ</button>
-          </div>
-        </div>
-        <div class="human-wrap">
-          <svg id="human" class="human-model" viewBox="0 0 320 610" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Выбор областей тела"></svg>
-          <div class="model-caption" id="modelCaption">FRONT VIEW / SELECT REGION</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-title">ОБЛАСТИ ТЕЛА</div>
-        <div class="zone-list" id="zoneList"></div>
-        <div class="selected-box" id="selectedZones">Области не выбраны</div>
-        <div class="field mt">
-          <label>Интенсивность боли: <strong id="painLabel">0/10</strong></label>
-          <div class="pain-scale" id="painScale"></div>
-        </div>
-        <div class="notice">Карта предназначена только для обозначения местоположения симптомов. Это не анатомическое обследование.</div>
-      </div>
-    </div>
-    <div class="card mt">
-      <div class="field">
-        <label for="complaint">Основная жалоба</label>
-        <textarea id="complaint" placeholder="Что беспокоит? Опишите симптомы своими словами."></textarea>
-      </div>
-      <div class="cols">
-        <div class="field">
-          <label for="duration">Когда началось?</label>
-          <select id="duration">
-            <option value="">Выберите</option>
-            <option>Сегодня</option>
-            <option>1–3 дня назад</option>
-            <option>4–7 дней назад</option>
-            <option>Несколько недель назад</option>
-            <option>Несколько месяцев назад</option>
-            <option>Более года назад</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Характер боли</label>
-          <div class="choices">
-            <button class="choice" data-type="Острый">Острый</button>
-            <button class="choice" data-type="Ноющий">Ноющий</button>
-            <button class="choice" data-type="Жгучий">Жгучий</button>
-            <button class="choice" data-type="Пульсирующий">Пульсирующий</button>
-            <button class="choice" data-type="Давящий">Давящий</button>
-            <button class="choice" data-type="Другой">Другой</button>
-          </div>
-        </div>
-      </div>
-      <div class="actions">
-        <button class="btn" data-go="patient">НАЗАД</button>
-        <button class="btn primary" data-go="interview">К ИНТЕРВЬЮ</button>
-      </div>
-    </div>
-  </section>
+<section class="page" id="page-symptoms">
+<div class="eyebrow">02 / КАРТА ТЕЛА</div>
+<h2 style="margin-top:13px">Где ощущается боль?</h2>
+<p class="sub">Выберите нужные области на модели человека. Можно отметить несколько участков и переключаться между видом спереди и сзади.</p>
+<div class="anatomy-layout mt">
+<div class="anatomy-stage">
+<div class="model-toolbar">
+<span class="eyebrow">АНАТОМИЧЕСКАЯ КАРТА</span>
+<div class="model-switch"><button class="active" data-view="front">СПЕРЕДИ</button><button data-view="back">СЗАДИ</button></div>
+</div>
+<div class="human-wrap">
+<svg id="human" class="human-model" viewBox="0 0 320 610" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Выбор областей тела"></svg>
+<div class="model-caption" id="modelCaption">ВИД СПЕРЕДИ / ВЫБЕРИТЕ ОБЛАСТЬ</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">ОБЛАСТИ ТЕЛА</div>
+<div class="zone-list" id="zoneList"></div>
+<div class="selected-box" id="selectedZones">Области не выбраны</div>
+<div class="field mt">
+<label>Интенсивность боли: <strong id="painLabel">0/10</strong></label>
+<div class="pain-scale" id="painScale"></div>
+</div>
+<div class="notice">Модель помогает указать расположение боли, но не заменяет медицинский осмотр.</div>
+</div>
+</div>
+<div class="card mt">
+<div class="field"><label for="complaint">Основная жалоба</label><textarea id="complaint" placeholder="Опишите, что вас беспокоит, своими словами."></textarea></div>
+<div class="cols">
+<div class="field"><label for="duration">Когда появились симптомы?</label>
+<select id="duration">
+<option value="">Выберите</option>
+<option>Сегодня</option><option>1–3 дня назад</option><option>4–7 дней назад</option>
+<option>Несколько недель назад</option><option>Несколько месяцев назад</option><option>Более года назад</option>
+</select></div>
+<div class="field"><label>Характер боли</label><div class="choices">
+<button class="choice" data-type="Острый">Острый</button>
+<button class="choice" data-type="Ноющий">Ноющий</button>
+<button class="choice" data-type="Жгучий">Жгучий</button>
+<button class="choice" data-type="Пульсирующий">Пульсирующий</button>
+<button class="choice" data-type="Давящий">Давящий</button>
+<button class="choice" data-type="Другой">Другой</button>
+</div></div>
+</div>
+<div class="actions"><button class="btn" data-go="patient">НАЗАД</button><button class="btn primary" data-go="interview">К ОПРОСУ</button></div>
+</div>
+</section>
 
-  <section class="page" id="page-interview">
-    <div class="eyebrow">03 / INTERVIEW</div>
-    <h2 style="margin-top:13px">Короткое AI-интервью</h2>
-    <p class="sub">Не более четырёх уточняющих вопросов. При недоступности локальной модели включается адаптивный резервный алгоритм.</p>
-    <div class="chat-layout mt">
-      <div class="card chat-panel">
-        <div class="chat-head">
-          <div>
-            <div class="eyebrow">MEDLENS INTERVIEW ENGINE</div>
-            <div id="aiStatus" style="font-size:12px;color:var(--muted);margin-top:9px">Ожидание запуска</div>
-          </div>
-          <button class="btn primary" id="startAI">ЗАПУСТИТЬ</button>
-        </div>
-        <div class="messages" id="messages">
-          <div class="message ai">
-            <div class="message-label">MEDLENS</div>
-            <div class="message-content">Здравствуйте. Я задам несколько коротких вопросов, чтобы уточнить описание симптомов.</div>
-          </div>
-        </div>
-        <div class="chat-compose">
-          <input id="chatInput" placeholder="Ваш ответ..." disabled>
-          <button id="send" disabled>ОТПРАВИТЬ</button>
-        </div>
-      </div>
-      <div>
-        <div class="card">
-          <div class="eyebrow">PROCESSING UNIT</div>
-          <div class="ai-indicator" id="aiIndicator"><div></div></div>
-          <div id="aiMode" style="text-align:center;color:var(--accent);font-size:12px">STANDBY</div>
-          <div class="progress-track mt"><div class="progress-fill" id="aiProgress"></div></div>
-          <p class="sub" id="aiNote" style="font-size:10px;margin-top:14px">Для WebLLM требуется WebGPU. Первая загрузка модели может занять время.</p>
-        </div>
-        <div class="card mt">
-          <div class="card-title">КОНТЕКСТ</div>
-          <div class="mini-data">Возраст <strong id="miniAge">—</strong></div>
-          <div class="mini-data">Пол <strong id="miniSex">—</strong></div>
-          <div class="mini-data">Боль <strong id="miniPain">0/10</strong></div>
-          <div class="mini-data">Ответы <strong id="miniAnswers">0/4</strong></div>
-          <div class="warning" id="warning"></div>
-        </div>
-      </div>
-    </div>
-    <div class="actions">
-      <button class="btn" data-go="symptoms">НАЗАД</button>
-      <button class="btn primary" data-go="history">ПРОДОЛЖИТЬ</button>
-    </div>
-  </section>
+<section class="page" id="page-interview">
+<div class="eyebrow">03 / ОПРОС</div>
+<h2 style="margin-top:13px">Уточняющие вопросы</h2>
+<p class="sub">Система задаст не более четырёх вопросов. Если локальная модель искусственного интеллекта недоступна, включится резервный алгоритм.</p>
+<div class="chat-layout mt">
+<div class="card chat-panel">
+<div class="chat-head">
+<div><div class="eyebrow">МЕДАНАЛИТИК / СИСТЕМА ОПРОСА</div><div id="aiStatus" style="font-size:12px;color:var(--muted);margin-top:9px">Ожидание запуска</div></div>
+<button class="btn primary" id="startAI">ЗАПУСТИТЬ</button>
+</div>
+<div class="messages" id="messages">
+<div class="message ai"><div class="message-label">МЕДАНАЛИТИК</div><div class="message-content">Здравствуйте. Я задам несколько коротких вопросов, чтобы уточнить описание ваших симптомов.</div></div>
+</div>
+<div class="chat-compose"><input id="chatInput" placeholder="Ваш ответ..." disabled><button id="send" disabled>ОТПРАВИТЬ</button></div>
+</div>
+<div>
+<div class="card">
+<div class="eyebrow">ОБРАБОТКА ДАННЫХ</div>
+<div class="ai-indicator" id="aiIndicator"><div></div></div>
+<div id="aiMode" style="text-align:center;color:var(--accent);font-size:12px">ОЖИДАНИЕ</div>
+<div class="progress-track mt"><div class="progress-fill" id="aiProgress"></div></div>
+<p class="sub" id="aiNote" style="font-size:10px;margin-top:14px">Для локального искусственного интеллекта требуется поддержка WebGPU. Первая загрузка модели может занять время.</p>
+</div>
+<div class="card mt">
+<div class="card-title">КОНТЕКСТ</div>
+<div class="mini-data">Возраст <strong id="miniAge">—</strong></div>
+<div class="mini-data">Пол <strong id="miniSex">—</strong></div>
+<div class="mini-data">Боль <strong id="miniPain">0/10</strong></div>
+<div class="mini-data">Ответы <strong id="miniAnswers">0/4</strong></div>
+<div class="warning" id="warning"></div>
+</div>
+</div>
+</div>
+<div class="actions"><button class="btn" data-go="symptoms">НАЗАД</button><button class="btn primary" data-go="history">ПРОДОЛЖИТЬ</button></div>
+</section>
 
-  <section class="page" id="page-history">
-    <div class="eyebrow">04 / HISTORY</div>
-    <h2 style="margin-top:13px">Медицинский анамнез</h2>
-    <p class="sub">Дополнительные сведения, которые могут быть полезны при обсуждении жалобы с врачом.</p>
-    <div class="card mt">
-      <div class="cols">
-        <div class="field"><label for="chronic">Хронические заболевания</label><textarea id="chronic" placeholder="Если нет — укажите «нет»"></textarea></div>
-        <div class="field"><label for="medications">Принимаемые препараты</label><textarea id="medications" placeholder="Если есть"></textarea></div>
-        <div class="field"><label for="allergies">Аллергии</label><textarea id="allergies" placeholder="Если нет — укажите «нет»"></textarea></div>
-        <div class="field"><label for="additional">Дополнительные сведения</label><textarea id="additional" placeholder="Что ещё важно знать?"></textarea></div>
-      </div>
-      <div class="actions">
-        <button class="btn" data-go="interview">НАЗАД</button>
-        <button class="btn primary" data-go="analysis">К АНАЛИЗУ</button>
-      </div>
-    </div>
-  </section>
+<section class="page" id="page-history">
+<div class="eyebrow">04 / АНАМНЕЗ</div>
+<h2 style="margin-top:13px">Медицинский анамнез</h2>
+<p class="sub">Дополнительные сведения, которые могут быть полезны врачу.</p>
+<div class="card mt">
+<div class="cols">
+<div class="field"><label for="chronic">Хронические заболевания</label><textarea id="chronic" placeholder="Если нет — укажите «нет»"></textarea></div>
+<div class="field"><label for="medications">Принимаемые препараты</label><textarea id="medications" placeholder="Если есть"></textarea></div>
+<div class="field"><label for="allergies">Аллергии</label><textarea id="allergies" placeholder="Если нет — укажите «нет»"></textarea></div>
+<div class="field"><label for="additional">Дополнительные сведения</label><textarea id="additional" placeholder="Что ещё важно знать?"></textarea></div>
+</div>
+<div class="actions"><button class="btn" data-go="interview">НАЗАД</button><button class="btn primary" data-go="analysis">К АНАЛИЗУ</button></div>
+</div>
+</section>
 
-  <section class="page" id="page-analysis">
-    <div class="eyebrow">05 / SUMMARY</div>
-    <h2 style="margin-top:13px">Предварительная сводка</h2>
-    <p class="sub">Демонстрационное сопоставление признаков с базой симптомных шаблонов и подготовка отчёта для врача.</p>
-    <div class="notice mt">Совпадения с шаблонами не являются диагнозом или вероятностью заболевания. Даже низкое совпадение не исключает опасного состояния.</div>
-    <div class="actions">
-      <button class="btn primary" id="analyze">СФОРМИРОВАТЬ СВОДКУ</button>
-      <button class="btn" id="download" disabled>СКАЧАТЬ TXT</button>
-    </div>
-    <div class="cols mt" id="results" style="display:none;align-items:start">
-      <div class="card">
-        <div class="card-title">СОВПАДЕНИЯ ПРИЗНАКОВ</div>
-        <div id="conditionResults"></div>
-      </div>
-      <div class="card">
-        <div class="card-title">СВОДКА ДЛЯ ВРАЧА</div>
-        <div class="report-grid" id="reportGrid"></div>
-      </div>
-    </div>
-  </section>
+<section class="page" id="page-analysis">
+<div class="eyebrow">05 / АНАЛИЗ</div>
+<h2 style="margin-top:13px">Предварительная сводка</h2>
+<p class="sub">Система сопоставит ваши жалобы с учебной базой описаний симптомов и сформирует отчёт.</p>
+<div class="notice mt">Совпадения признаков не являются диагнозом или вероятностью заболевания. Отсутствие совпадений не исключает опасных состояний.</div>
+<div class="actions"><button class="btn primary" id="analyze">СФОРМИРОВАТЬ СВОДКУ</button><button class="btn" id="download" disabled>СКАЧАТЬ ОТЧЁТ</button></div>
+<div class="cols mt" id="results" style="display:none;align-items:start">
+<div class="card"><div class="card-title">СОВПАДЕНИЯ ПРИЗНАКОВ</div><div id="conditionResults"></div></div>
+<div class="card"><div class="card-title">СВОДКА ДЛЯ ВРАЧА</div><div class="report-grid" id="reportGrid"></div></div>
+</div>
+</section>
 </main>
 </div>
 
 <script type="module">
 const $=id=>document.getElementById(id);
 const state={
-  age:null,sex:"",zones:[],pain:0,complaint:"",duration:"",type:"",
-  answers:[],chronic:"",medications:"",allergies:"",additional:"",
-  important:false
+age:null,sex:"",zones:[],pain:0,complaint:"",duration:"",type:"",
+answers:[],chronic:"",medications:"",allergies:"",additional:"",important:false
 };
 const pages=["home","patient","symptoms","interview","history","analysis"];
 const norm=v=>String(v??"").toLowerCase().replaceAll("ё","е");
 const includesAny=(text,words)=>words.some(w=>norm(text).includes(norm(w)));
 
 function toast(message){
-  const el=$("toast");el.textContent=message;el.classList.add("show");
-  clearTimeout(toast.timer);
-  toast.timer=setTimeout(()=>el.classList.remove("show"),3200);
+const el=$("toast");el.textContent=message;el.classList.add("show");
+clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),3200)
 }
 function save(){
-  const age=Number($("age").value);
-  state.age=Number.isInteger(age)&&age>=1&&age<=120?age:null;
-  for(const id of ["complaint","duration","chronic","medications","allergies","additional"]){
-    state[id]=$(id).value.trim();
-  }
+const age=Number($("age").value);
+state.age=$("age").value&&Number.isInteger(age)&&age>=1&&age<=120?age:null;
+for(const id of ["complaint","duration","chronic","medications","allergies","additional"])state[id]=$(id).value.trim()
 }
 function showPage(page){
-  if(!pages.includes(page))return;
-  save();
-  if(page==="interview"&&!state.complaint){
-    toast("Сначала опишите основную жалобу.");
-    page="symptoms";
-  }
-  document.querySelectorAll(".page").forEach(el=>el.classList.toggle("active",el.id==="page-"+page));
-  document.querySelectorAll(".nav").forEach(el=>el.classList.toggle("active",el.dataset.page===page));
-  updateMini();
-  window.scrollTo({top:0,behavior:"smooth"});
+if(!pages.includes(page))return;
+save();
+if(page==="interview"&&!state.complaint){toast("Сначала опишите основную жалобу.");page="symptoms"}
+document.querySelectorAll(".page").forEach(el=>el.classList.toggle("active",el.id==="page-"+page));
+document.querySelectorAll(".nav").forEach(el=>el.classList.toggle("active",el.dataset.page===page));
+updateMini();window.scrollTo({top:0,behavior:"smooth"})
 }
 document.querySelectorAll("[data-page]").forEach(b=>b.onclick=()=>showPage(b.dataset.page));
 document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>showPage(b.dataset.go));
 $("begin").onclick=()=>showPage("patient");
 $("restart").onclick=()=>{if(confirm("Начать новую сессию? Данные будут сброшены."))location.reload()};
 document.querySelectorAll("[data-sex]").forEach(b=>b.onclick=()=>{
-  state.sex=b.dataset.sex;
-  document.querySelectorAll("[data-sex]").forEach(x=>x.classList.toggle("selected",x===b));
-  updateMini();
+state.sex=b.dataset.sex;
+document.querySelectorAll("[data-sex]").forEach(x=>x.classList.toggle("selected",x===b));
+updateMini()
 });
 document.querySelectorAll("[data-type]").forEach(b=>b.onclick=()=>{
-  state.type=b.dataset.type;
-  document.querySelectorAll("[data-type]").forEach(x=>x.classList.toggle("selected",x===b));
+state.type=b.dataset.type;
+document.querySelectorAll("[data-type]").forEach(x=>x.classList.toggle("selected",x===b))
 });
 
-/* ANATOMICAL MODEL */
+/* Интерактивная анатомическая модель */
 const ZONES=[
 "Голова","Лицо","Затылок","Шея","Правая грудь","Левая грудь",
 "Верх живота","Низ живота","Правый бок","Левый бок","Таз",
@@ -458,160 +405,149 @@ const region=(zone,d)=>`<path class="region" data-zone="${zone}" d="${d}"><title
 const line=(d,cls="detail")=>`<path class="${cls}" d="${d}"/>`;
 
 function drawHuman(){
-  const front=view==="front";
-  let s=`<g transform="translate(0 5)">`;
-
-  s+=region(front?"Лицо":"Затылок","M138 33 Q141 13 160 12 Q179 13 182 33 L180 63 Q177 83 160 89 Q143 83 140 63 Z");
-  s+=region("Шея","M147 87 L147 108 Q137 112 132 120 L188 120 Q183 112 173 108 L173 87 Q160 96 147 87 Z");
-  s+=region("Правое плечо","M132 116 Q108 118 92 134 L81 153 L104 173 L122 148 Z");
-  s+=region("Левое плечо","M188 116 Q212 118 228 134 L239 153 L216 173 L198 148 Z");
-  s+=region("Правая рука","M92 140 Q76 146 73 169 L60 229 L82 237 L105 172 Z");
-  s+=region("Левая рука","M228 140 Q244 146 247 169 L260 229 L238 237 L215 172 Z");
-  s+=region("Правый локоть","M60 229 L82 237 L79 252 L56 249 Z");
-  s+=region("Левый локоть","M260 229 L238 237 L241 252 L264 249 Z");
-  s+=region("Правая рука","M56 250 L79 253 L72 315 L55 320 L45 307 Z");
-  s+=region("Левая рука","M264 250 L241 253 L248 315 L265 320 L275 307 Z");
-  s+=region("Правая кисть","M72 315 L55 320 L40 354 Q37 368 45 374 L52 365 L54 385 Q58 393 64 386 L68 372 L72 381 Q79 383 80 375 L79 342 Z");
-  s+=region("Левая кисть","M248 315 L265 320 L280 354 Q283 368 275 374 L268 365 L266 385 Q262 393 256 386 L252 372 L248 381 Q241 383 240 375 L241 342 Z");
-
-  if(front){
-    s+=region("Правая грудь","M122 121 Q140 117 158 123 L158 190 Q133 195 111 180 L104 153 Z");
-    s+=region("Левая грудь","M198 121 Q180 117 162 123 L162 190 Q187 195 209 180 L216 153 Z");
-    s+=region("Правый бок","M110 183 L139 194 L140 264 L118 258 Q111 227 110 183 Z");
-    s+=region("Левый бок","M210 183 L181 194 L180 264 L202 258 Q209 227 210 183 Z");
-    s+=region("Верх живота","M141 194 L179 194 L183 248 Q160 255 137 248 Z");
-    s+=region("Низ живота","M137 249 Q160 256 183 249 L196 298 L160 326 L124 298 Z");
-  }else{
-    s+=region("Верх спины","M122 121 Q160 113 198 121 L213 183 L199 224 L121 224 L107 183 Z");
-    s+=region("Поясница","M121 225 L199 225 L200 290 Q180 310 160 312 Q140 310 120 290 Z");
-  }
-
-  s+=region("Таз","M124 299 Q143 313 160 326 Q177 313 196 299 L207 348 L177 368 L160 348 L143 368 L113 348 Z");
-  s+=region("Правое бедро","M113 348 L158 351 L156 437 L144 467 L107 463 Q104 410 113 348 Z");
-  s+=region("Левое бедро","M162 351 L207 348 Q216 410 213 463 L176 467 L164 437 Z");
-  s+=region("Правое колено","M107 464 L144 468 L146 498 Q127 511 108 499 Z");
-  s+=region("Левое колено","M176 468 L213 464 L212 499 Q193 511 174 498 Z");
-  s+=region("Правая голень","M108 501 Q128 513 146 501 L145 560 L138 581 L113 581 Z");
-  s+=region("Левая голень","M174 501 Q192 513 212 501 L207 581 L182 581 L175 560 Z");
-  s+=region("Правая стопа","M113 579 L139 579 L141 600 Q137 607 108 607 Q99 604 106 594 Z");
-  s+=region("Левая стопа","M181 579 L207 579 L214 594 Q221 604 212 607 Q183 607 179 600 Z");
-
-  if(front){
-    s+=line("M145 42 Q150 38 155 42 M165 42 Q170 38 175 42");
-    s+=line("M156 50 L160 61 L164 50");
-    s+=line("M151 72 Q160 76 169 72");
-    s+=line("M160 122 L160 190","skeleton");
-    s+=line("M121 148 Q141 163 156 157");
-    s+=line("M199 148 Q179 163 164 157");
-    s+=line("M142 207 Q160 214 178 207");
-    s+=line("M143 225 Q160 231 177 225");
-    s+=line("M143 244 Q160 251 177 244");
-    s+=line("M160 195 L160 296","skeleton");
-  }else{
-    s+=line("M160 125 L160 304","skeleton");
-    s+=line("M119 143 Q142 155 154 190");
-    s+=line("M201 143 Q178 155 166 190");
-    s+=line("M122 205 Q160 217 198 205");
-    s+=line("M132 245 Q160 257 188 245");
-    s+=line("M139 277 Q160 288 181 277");
-  }
-  s+=line("M122 389 Q132 400 148 397");
-  s+=line("M198 389 Q188 400 172 397");
-  s+=line("M113 483 Q126 490 142 483");
-  s+=line("M178 483 Q194 490 207 483");
-  s+="</g>";
-
-  $("human").innerHTML=s;
-  $("human").querySelectorAll(".region").forEach(el=>{
-    el.classList.toggle("selected",state.zones.includes(el.dataset.zone));
-    el.setAttribute("tabindex","0");
-    el.setAttribute("role","button");
-    el.setAttribute("aria-label",el.dataset.zone);
-    el.onclick=()=>toggleZone(el.dataset.zone);
-    el.onkeydown=e=>{
-      if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleZone(el.dataset.zone)}
-    };
-  });
-  $("modelCaption").textContent=(front?"FRONT VIEW":"BACK VIEW")+" / SELECT REGION";
+const front=view==="front";
+let s=`<g transform="translate(0 5)">`;
+s+=region(front?"Лицо":"Затылок","M138 33 Q141 13 160 12 Q179 13 182 33 L180 63 Q177 83 160 89 Q143 83 140 63 Z");
+s+=region("Шея","M147 87 L147 108 Q137 112 132 120 L188 120 Q183 112 173 108 L173 87 Q160 96 147 87 Z");
+s+=region("Правое плечо","M132 116 Q108 118 92 134 L81 153 L104 173 L122 148 Z");
+s+=region("Левое плечо","M188 116 Q212 118 228 134 L239 153 L216 173 L198 148 Z");
+s+=region("Правая рука","M92 140 Q76 146 73 169 L60 229 L82 237 L105 172 Z");
+s+=region("Левая рука","M228 140 Q244 146 247 169 L260 229 L238 237 L215 172 Z");
+s+=region("Правый локоть","M60 229 L82 237 L79 252 L56 249 Z");
+s+=region("Левый локоть","M260 229 L238 237 L241 252 L264 249 Z");
+s+=region("Правая рука","M56 250 L79 253 L72 315 L55 320 L45 307 Z");
+s+=region("Левая рука","M264 250 L241 253 L248 315 L265 320 L275 307 Z");
+s+=region("Правая кисть","M72 315 L55 320 L40 354 Q37 368 45 374 L52 365 L54 385 Q58 393 64 386 L68 372 L72 381 Q79 383 80 375 L79 342 Z");
+s+=region("Левая кисть","M248 315 L265 320 L280 354 Q283 368 275 374 L268 365 L266 385 Q262 393 256 386 L252 372 L248 381 Q241 383 240 375 L241 342 Z");
+if(front){
+s+=region("Правая грудь","M122 121 Q140 117 158 123 L158 190 Q133 195 111 180 L104 153 Z");
+s+=region("Левая грудь","M198 121 Q180 117 162 123 L162 190 Q187 195 209 180 L216 153 Z");
+s+=region("Правый бок","M110 183 L139 194 L140 264 L118 258 Q111 227 110 183 Z");
+s+=region("Левый бок","M210 183 L181 194 L180 264 L202 258 Q209 227 210 183 Z");
+s+=region("Верх живота","M141 194 L179 194 L183 248 Q160 255 137 248 Z");
+s+=region("Низ живота","M137 249 Q160 256 183 249 L196 298 L160 326 L124 298 Z");
+}else{
+s+=region("Верх спины","M122 121 Q160 113 198 121 L213 183 L199 224 L121 224 L107 183 Z");
+s+=region("Поясница","M121 225 L199 225 L200 290 Q180 310 160 312 Q140 310 120 290 Z")
+}
+s+=region("Таз","M124 299 Q143 313 160 326 Q177 313 196 299 L207 348 L177 368 L160 348 L143 368 L113 348 Z");
+s+=region("Правое бедро","M113 348 L158 351 L156 437 L144 467 L107 463 Q104 410 113 348 Z");
+s+=region("Левое бедро","M162 351 L207 348 Q216 410 213 463 L176 467 L164 437 Z");
+s+=region("Правое колено","M107 464 L144 468 L146 498 Q127 511 108 499 Z");
+s+=region("Левое колено","M176 468 L213 464 L212 499 Q193 511 174 498 Z");
+s+=region("Правая голень","M108 501 Q128 513 146 501 L145 560 L138 581 L113 581 Z");
+s+=region("Левая голень","M174 501 Q192 513 212 501 L207 581 L182 581 L175 560 Z");
+s+=region("Правая стопа","M113 579 L139 579 L141 600 Q137 607 108 607 Q99 604 106 594 Z");
+s+=region("Левая стопа","M181 579 L207 579 L214 594 Q221 604 212 607 Q183 607 179 600 Z");
+if(front){
+s+=line("M145 42 Q150 38 155 42 M165 42 Q170 38 175 42");
+s+=line("M156 50 L160 61 L164 50");
+s+=line("M151 72 Q160 76 169 72");
+s+=line("M160 122 L160 190","skeleton");
+s+=line("M121 148 Q141 163 156 157");
+s+=line("M199 148 Q179 163 164 157");
+s+=line("M142 207 Q160 214 178 207");
+s+=line("M143 225 Q160 231 177 225");
+s+=line("M143 244 Q160 251 177 244");
+s+=line("M160 195 L160 296","skeleton")
+}else{
+s+=line("M160 125 L160 304","skeleton");
+s+=line("M119 143 Q142 155 154 190");
+s+=line("M201 143 Q178 155 166 190");
+s+=line("M122 205 Q160 217 198 205");
+s+=line("M132 245 Q160 257 188 245");
+s+=line("M139 277 Q160 288 181 277")
+}
+s+=line("M122 389 Q132 400 148 397");
+s+=line("M198 389 Q188 400 172 397");
+s+=line("M113 483 Q126 490 142 483");
+s+=line("M178 483 Q194 490 207 483");
+s+="</g>";
+$("human").innerHTML=s;
+$("human").querySelectorAll(".region").forEach(el=>{
+el.classList.toggle("selected",state.zones.includes(el.dataset.zone));
+el.setAttribute("tabindex","0");
+el.setAttribute("role","button");
+el.setAttribute("aria-label",el.dataset.zone);
+el.onclick=()=>toggleZone(el.dataset.zone);
+el.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleZone(el.dataset.zone)}}
+});
+$("modelCaption").textContent=(front?"ВИД СПЕРЕДИ":"ВИД СЗАДИ")+" / ВЫБЕРИТЕ ОБЛАСТЬ"
 }
 function toggleZone(zone){
-  state.zones=state.zones.includes(zone)?state.zones.filter(z=>z!==zone):[...state.zones,zone];
-  updateZones();
+state.zones=state.zones.includes(zone)?state.zones.filter(z=>z!==zone):[...state.zones,zone];
+updateZones()
 }
 function updateZones(){
-  $("zoneList").replaceChildren();
-  ZONES.forEach(zone=>{
-    const b=document.createElement("button");
-    b.className="zone-tag"+(state.zones.includes(zone)?" selected":"");
-    b.textContent=zone;
-    b.onclick=()=>toggleZone(zone);
-    $("zoneList").appendChild(b);
-  });
-  $("selectedZones").textContent=state.zones.join(" / ")||"Области не выбраны";
-  $("human").querySelectorAll(".region").forEach(el=>el.classList.toggle("selected",state.zones.includes(el.dataset.zone)));
+$("zoneList").replaceChildren();
+ZONES.forEach(zone=>{
+const b=document.createElement("button");
+b.className="zone-tag"+(state.zones.includes(zone)?" selected":"");
+b.textContent=zone;b.onclick=()=>toggleZone(zone);
+$("zoneList").appendChild(b)
+});
+$("selectedZones").textContent=state.zones.join(" / ")||"Области не выбраны";
+$("human").querySelectorAll(".region").forEach(el=>el.classList.toggle("selected",state.zones.includes(el.dataset.zone)))
 }
 document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{
-  view=b.dataset.view;
-  document.querySelectorAll("[data-view]").forEach(x=>x.classList.toggle("active",x===b));
-  drawHuman();
+view=b.dataset.view;
+document.querySelectorAll("[data-view]").forEach(x=>x.classList.toggle("active",x===b));
+drawHuman()
 });
 for(let i=0;i<=10;i++){
-  const b=document.createElement("button");
-  b.textContent=i;b.classList.toggle("selected",i===0);
-  b.onclick=()=>{
-    state.pain=i;$("painLabel").textContent=i+"/10";
-    document.querySelectorAll("#painScale button").forEach(x=>x.classList.toggle("selected",x===b));
-    updateMini();
-  };
-  $("painScale").appendChild(b);
+const b=document.createElement("button");b.textContent=i;
+b.classList.toggle("selected",i===0);
+b.onclick=()=>{
+state.pain=i;$("painLabel").textContent=i+"/10";
+document.querySelectorAll("#painScale button").forEach(x=>x.classList.toggle("selected",x===b));
+updateMini()
+};
+$("painScale").appendChild(b)
 }
 drawHuman();updateZones();
 
 function updateMini(){
-  $("miniAge").textContent=state.age??"—";
-  $("miniSex").textContent=state.sex||"—";
-  $("miniPain").textContent=state.pain+"/10";
-  $("miniAnswers").textContent=state.answers.length+"/4";
+$("miniAge").textContent=state.age??"—";
+$("miniSex").textContent=state.sex||"—";
+$("miniPain").textContent=state.pain+"/10";
+$("miniAnswers").textContent=state.answers.length+"/4"
 }
 function addMessage(role,text){
-  const box=document.createElement("div");box.className="message "+role;
-  const label=document.createElement("div");label.className="message-label";
-  label.textContent=role==="ai"?"MEDLENS":"PATIENT";
-  const content=document.createElement("div");content.className="message-content";content.textContent=text;
-  box.append(label,content);$("messages").appendChild(box);
-  $("messages").scrollTop=$("messages").scrollHeight;
-  return box;
+const box=document.createElement("div");box.className="message "+role;
+const label=document.createElement("div");label.className="message-label";
+label.textContent=role==="ai"?"МЕДАНАЛИТИК":"ПАЦИЕНТ";
+const content=document.createElement("div");content.className="message-content";content.textContent=text;
+box.append(label,content);$("messages").appendChild(box);
+$("messages").scrollTop=$("messages").scrollHeight;return box
 }
 
-/* EMERGENCY FLAGS — independent of pattern scoring */
+/* Проверка потенциально опасных симптомов */
 const RED_FLAGS=[
-  ["не могу дышать","Затруднённое дыхание"],
-  ["задыхаюсь","Затруднённое дыхание"],
-  ["сильная одышка","Выраженная одышка"],
-  ["потеря сознания","Потеря сознания"],
-  ["потерял сознание","Потеря сознания"],
-  ["потеряла сознание","Потеря сознания"],
-  ["сильное кровотечение","Сильное кровотечение"],
-  ["обильное кровотечение","Сильное кровотечение"],
-  ["внезапная слабость одной стороны","Внезапная односторонняя слабость"],
-  ["перекосило лицо","Возможные неврологические симптомы"],
-  ["не могу говорить","Нарушение речи"],
-  ["внезапная очень сильная головная боль","Внезапная сильная головная боль"],
-  ["судороги","Судороги"]
+["не могу дышать","Затруднённое дыхание"],
+["задыхаюсь","Затруднённое дыхание"],
+["сильная одышка","Выраженная одышка"],
+["потеря сознания","Потеря сознания"],
+["потерял сознание","Потеря сознания"],
+["потеряла сознание","Потеря сознания"],
+["сильное кровотечение","Сильное кровотечение"],
+["обильное кровотечение","Сильное кровотечение"],
+["внезапная слабость одной стороны","Внезапная односторонняя слабость"],
+["перекосило лицо","Возможные неврологические симптомы"],
+["не могу говорить","Нарушение речи"],
+["внезапная очень сильная головная боль","Внезапная сильная головная боль"],
+["судороги","Судороги"]
 ];
 function safetyCheck(){
-  const text=norm([
-    state.complaint,state.additional,...state.answers.map(a=>a.answer)
-  ].join(" "));
-  const found=RED_FLAGS.filter(([term])=>text.includes(norm(term))).map(x=>x[1]);
-  state.important=found.length>0;
-  if(state.important){
-    $("warning").classList.add("show");
-    $("warning").textContent="В описании обнаружены потенциально опасные симптомы. При их наличии сейчас не ждите окончания опроса — обратитесь за срочной медицинской помощью.";
-  }else $("warning").classList.remove("show");
+const text=norm([state.complaint,state.additional,...state.answers.map(a=>a.answer)].join(" "));
+const found=RED_FLAGS.filter(([term])=>text.includes(norm(term))).map(x=>x[1]);
+state.important=found.length>0;
+if(state.important){
+$("warning").classList.add("show");
+$("warning").textContent="Обнаружены потенциально опасные симптомы. Если они присутствуют сейчас, не ждите завершения опроса — обратитесь за срочной медицинской помощью."
+}else $("warning").classList.remove("show")
 }
 
-/* INTERVIEW — 4 QUESTIONS MAXIMUM */
+/* Опрос — не более четырёх вопросов */
 const MAX_TURNS=4;
 const MODEL="Llama-3.2-1B-Instruct-q4f16_1-MLC";
 let engine=null,aiReady=false,aiBusy=false,fallback=false;
@@ -620,16 +556,16 @@ let currentQuestion="",currentQuestionId="";
 const askedFallback=new Set();
 
 function setStatus(text,mode){
-  $("aiStatus").textContent=text;
-  $("aiMode").textContent=mode;
-  $("topStatus").textContent=mode==="LOCAL AI"?"LOCAL AI ACTIVE":"SYSTEM READY";
+$("aiStatus").textContent=text;
+$("aiMode").textContent=mode;
+$("topStatus").textContent=mode==="ЛОКАЛЬНЫЙ ИИ"?"ЛОКАЛЬНЫЙ ИИ АКТИВЕН":"СИСТЕМА ГОТОВА"
 }
 function thinking(value){
-  $("aiIndicator").classList.toggle("thinking",value);
-  $("heroCore").classList.toggle("thinking",value);
+$("aiIndicator").classList.toggle("thinking",value);
+$("heroCore").classList.toggle("thinking",value)
 }
 function systemPrompt(){
-  return `Ты — MedLens, помощник по сбору жалоб, не врач.
+return `Ты — МедАналитик, помощник по сбору жалоб, не врач.
 Возраст: ${state.age??"не указан"}.
 Пол: ${state.sex||"не указан"}.
 Области: ${state.zones.join(", ")||"не указаны"}.
@@ -637,170 +573,146 @@ function systemPrompt(){
 Жалоба: ${state.complaint}.
 Начало: ${state.duration||"не указано"}.
 Характер: ${state.type||"не указан"}.
-
 Задавай строго один короткий вопрос по-русски.
-Всего не более 4 вопросов, включая уже заданные.
-Выбирай наиболее полезные уточнения для данной жалобы.
-Не повторяй сведения, которые уже известны.
-Уточняй обстоятельства, характер и сопутствующие симптомы.
+Всего не более четырёх вопросов.
+Не повторяй известные сведения.
+Уточняй обстоятельства и сопутствующие симптомы.
 Не ставь диагноз и не назначай лечение.
-При опасных признаках рекомендуй срочную медицинскую помощь.
+При опасных признаках рекомендуй срочную помощь.
 Если информации достаточно, ответь только [INTERVIEW_COMPLETE].
-Без списков, вступлений и объяснений.`;
+Без списков и вступлений.`
 }
 function buildMessages(){
-  const m=[{role:"system",content:systemPrompt()}];
-  state.answers.forEach(a=>{
-    m.push({role:"assistant",content:a.question});
-    m.push({role:"user",content:a.answer});
-  });
-  return m;
+const m=[{role:"system",content:systemPrompt()}];
+state.answers.forEach(a=>{
+m.push({role:"assistant",content:a.question});
+m.push({role:"user",content:a.answer})
+});
+return m
 }
 async function initAI(){
-  if(interviewStarted||aiBusy)return;
-  save();
-  if(!state.complaint){toast("Опишите жалобу перед запуском.");showPage("symptoms");return}
-  aiBusy=true;$("startAI").disabled=true;thinking(true);
-  setStatus("Проверка WebGPU...","INITIALIZING");
-  $("aiProgress").style.width="5%";
-  if(!navigator.gpu){startFallback("WebGPU недоступен.");return}
-  try{
-    const webllm=await import("https://esm.run/@mlc-ai/web-llm");
-    engine=await webllm.CreateMLCEngine(MODEL,{
-      initProgressCallback:p=>{
-        const n=typeof p.progress==="number"?Math.round(p.progress*100):0;
-        $("aiProgress").style.width=Math.max(10,Math.min(98,n))+"%";
-        $("aiStatus").textContent="Загрузка модели: "+n+"%";
-      }
-    });
-    aiReady=true;aiBusy=false;thinking(false);
-    $("aiProgress").style.width="100%";
-    $("aiNote").textContent="Модель работает локально в браузере. Для её загрузки требуется интернет.";
-    setStatus("Локальный AI готов","LOCAL AI");
-    beginInterview();
-  }catch(error){
-    console.error(error);
-    startFallback("Модель не загрузилась.");
-  }
+if(interviewStarted||aiBusy)return;
+save();
+if(!state.complaint){toast("Опишите жалобу перед запуском.");showPage("symptoms");return}
+aiBusy=true;$("startAI").disabled=true;thinking(true);
+setStatus("Проверка поддержки устройства...","ЗАГРУЗКА");
+$("aiProgress").style.width="5%";
+if(!navigator.gpu){startFallback("Локальный ИИ не поддерживается устройством.");return}
+try{
+const webllm=await import("https://esm.run/@mlc-ai/web-llm");
+engine=await webllm.CreateMLCEngine(MODEL,{
+initProgressCallback:p=>{
+const n=typeof p.progress==="number"?Math.round(p.progress*100):0;
+$("aiProgress").style.width=Math.max(10,Math.min(98,n))+"%";
+$("aiStatus").textContent="Загрузка модели: "+n+"%"
+}
+});
+aiReady=true;aiBusy=false;thinking(false);
+$("aiProgress").style.width="100%";
+$("aiNote").textContent="Модель работает локально в браузере. Для первой загрузки требуется интернет.";
+setStatus("Локальный ИИ готов","ЛОКАЛЬНЫЙ ИИ");
+beginInterview()
+}catch(error){console.error(error);startFallback("Модель не загрузилась.")}
 }
 function startFallback(reason){
-  fallback=true;aiReady=false;aiBusy=false;thinking(false);
-  $("aiProgress").style.width="100%";
-  $("aiNote").textContent=reason+" Используется резервный адаптивный опрос.";
-  setStatus("Резервный алгоритм","FALLBACK");
-  beginInterview();
+fallback=true;aiReady=false;aiBusy=false;thinking(false);
+$("aiProgress").style.width="100%";
+$("aiNote").textContent=reason+" Используется резервный опрос.";
+setStatus("Резервный алгоритм","РЕЗЕРВНЫЙ РЕЖИМ");
+beginInterview()
 }
 function beginInterview(){
-  if(interviewStarted)return;
-  interviewStarted=true;$("startAI").style.display="none";
-  addMessage("ai","Начинаем. Я задам не более четырёх уточняющих вопросов.");
-  askNext();
-}
-function prior(id){
-  return norm(state.answers.find(a=>a.id===id)?.answer||"");
+if(interviewStarted)return;
+interviewStarted=true;$("startAI").style.display="none";
+addMessage("ai","Начинаем. Я задам не более четырёх уточняющих вопросов.");
+askNext()
 }
 function fallbackQuestion(){
-  const text=norm([state.complaint,state.zones.join(" "),...state.answers.map(a=>a.answer)].join(" "));
-  const q=[];
-  const add=(id,question)=>{if(!askedFallback.has(id))q.push({id,question})};
-
-  if(!state.duration)add("onset","Когда впервые появился симптом?");
-  else add("onset","Симптом появился внезапно или постепенно?");
-
-  if(includesAny(text,["голов","затыл","мигрень"])){
-    add("head","Есть ли тошнота или чувствительность к свету и звукам?");
-  }else if(includesAny(text,["живот","бок","желуд"])){
-    add("abdomen","Связан ли симптом с едой и есть ли тошнота или изменения стула?");
-  }else if(includesAny(text,["груд","ребр"])){
-    add("chest","Меняется ли боль при дыхании, движении или нажатии?");
-  }else if(includesAny(text,["спин","поясниц","шея"])){
-    add("back","Меняется ли боль при движении и распространяется ли в руку или ногу?");
-  }else if(includesAny(text,["рук","кист","плеч","локт","ног","бедр","колен","голен","стоп"])){
-    add("limb","Были ли нагрузка или травма, и меняется ли симптом при движении?");
-  }else if(includesAny(text,["сып","зуд","кожа"])){
-    add("skin","Есть ли покраснение, зуд или распространение изменений?");
-  }else{
-    add("location","Где именно ощущается симптом и распространяется ли он?");
-  }
-
-  add("associated","Есть ли другие симптомы, появившиеся одновременно с основной жалобой?");
-  add("trigger","Что усиливает или уменьшает симптом?");
-  add("previous","Бывало ли такое раньше?");
-
-  return q[0]||null;
+const text=norm([state.complaint,state.zones.join(" "),...state.answers.map(a=>a.answer)].join(" "));
+const q=[];
+const add=(id,question)=>{if(!askedFallback.has(id))q.push({id,question})};
+if(!state.duration)add("onset","Когда впервые появился симптом?");
+else add("onset","Симптом появился внезапно или постепенно?");
+if(includesAny(text,["голов","затыл","мигрень"])){
+add("head","Есть ли тошнота или чувствительность к свету и звукам?")
+}else if(includesAny(text,["живот","бок","желуд"])){
+add("abdomen","Связан ли симптом с едой и есть ли тошнота или изменения стула?")
+}else if(includesAny(text,["груд","ребр"])){
+add("chest","Меняется ли боль при дыхании, движении или нажатии?")
+}else if(includesAny(text,["спин","поясниц","шея"])){
+add("back","Меняется ли боль при движении и распространяется ли в руку или ногу?")
+}else if(includesAny(text,["рук","кист","плеч","локт","ног","бедр","колен","голен","стоп"])){
+add("limb","Были ли нагрузка или травма, и меняется ли симптом при движении?")
+}else if(includesAny(text,["сып","зуд","кожа"])){
+add("skin","Есть ли покраснение, зуд или распространение изменений?")
+}else add("location","Где именно ощущается симптом и распространяется ли он?");
+add("associated","Есть ли другие симптомы, появившиеся одновременно с основной жалобой?");
+add("trigger","Что усиливает или уменьшает симптом?");
+add("previous","Бывало ли такое раньше?");
+return q[0]||null
 }
 function askFallback(){
-  if(interviewFinished)return;
-  if(turn>=MAX_TURNS){finishInterview();return}
-  const next=fallbackQuestion();
-  if(!next){finishInterview();return}
-  askedFallback.add(next.id);
-  currentQuestion=next.question;currentQuestionId=next.id;turn++;
-  addMessage("ai",currentQuestion);
-  $("chatInput").disabled=false;$("send").disabled=false;
-  $("chatInput").focus();
+if(interviewFinished)return;
+if(turn>=MAX_TURNS){finishInterview();return}
+const next=fallbackQuestion();
+if(!next){finishInterview();return}
+askedFallback.add(next.id);
+currentQuestion=next.question;currentQuestionId=next.id;turn++;
+addMessage("ai",currentQuestion);
+$("chatInput").disabled=false;$("send").disabled=false;$("chatInput").focus()
 }
 async function askAI(){
-  aiBusy=true;thinking(true);
-  $("chatInput").disabled=true;$("send").disabled=true;
-  const loading=addMessage("ai","Формирую вопрос...");
-  try{
-    const response=await engine.chat.completions.create({
-      messages:buildMessages(),temperature:.25,max_tokens:90
-    });
-    loading.remove();
-    let text=response?.choices?.[0]?.message?.content?.trim();
-    if(!text)throw Error("Empty response");
-    if(text.includes("[INTERVIEW_COMPLETE]")){finishInterview();return}
-    text=text.slice(0,300);
-    if(state.answers.some(a=>norm(a.question)===norm(text)))throw Error("Repeated question");
-    currentQuestion=text;currentQuestionId="ai_"+turn;turn++;
-    addMessage("ai",text);
-    aiBusy=false;thinking(false);
-    $("chatInput").disabled=false;$("send").disabled=false;
-    $("chatInput").focus();
-  }catch(error){
-    console.error(error);loading.remove();
-    aiBusy=false;thinking(false);fallback=true;aiReady=false;
-    setStatus("Резервный алгоритм","FALLBACK");
-    $("aiNote").textContent="AI стал недоступен. Опрос продолжен резервным алгоритмом.";
-    askFallback();
-  }
+aiBusy=true;thinking(true);
+$("chatInput").disabled=true;$("send").disabled=true;
+const loading=addMessage("ai","Формирую вопрос...");
+try{
+const response=await engine.chat.completions.create({
+messages:buildMessages(),temperature:.25,max_tokens:90
+});
+loading.remove();
+let text=response?.choices?.[0]?.message?.content?.trim();
+if(!text)throw Error("Пустой ответ");
+if(text.includes("[INTERVIEW_COMPLETE]")){finishInterview();return}
+text=text.slice(0,300);
+if(state.answers.some(a=>norm(a.question)===norm(text)))throw Error("Повтор вопроса");
+currentQuestion=text;currentQuestionId="ai_"+turn;turn++;
+addMessage("ai",text);
+aiBusy=false;thinking(false);
+$("chatInput").disabled=false;$("send").disabled=false;$("chatInput").focus()
+}catch(error){
+console.error(error);loading.remove();aiBusy=false;thinking(false);
+fallback=true;aiReady=false;
+setStatus("Резервный алгоритм","РЕЗЕРВНЫЙ РЕЖИМ");
+$("aiNote").textContent="Локальный ИИ стал недоступен. Опрос продолжен резервным алгоритмом.";
+askFallback()
+}
 }
 function askNext(){
-  if(interviewFinished)return;
-  if(turn>=MAX_TURNS){finishInterview();return}
-  if(aiReady&&!fallback)askAI();
-  else askFallback();
+if(interviewFinished)return;
+if(turn>=MAX_TURNS){finishInterview();return}
+if(aiReady&&!fallback)askAI();else askFallback()
 }
 function sendAnswer(){
-  if(!interviewStarted||interviewFinished||aiBusy)return;
-  const text=$("chatInput").value.trim();
-  if(!text)return;
-  $("chatInput").value="";
-  addMessage("user",text);
-  state.answers.push({id:currentQuestionId,question:currentQuestion,answer:text});
-  updateMini();safetyCheck();
-  $("chatInput").disabled=true;$("send").disabled=true;
-  setTimeout(askNext,200);
+if(!interviewStarted||interviewFinished||aiBusy)return;
+const text=$("chatInput").value.trim();if(!text)return;
+$("chatInput").value="";addMessage("user",text);
+state.answers.push({id:currentQuestionId,question:currentQuestion,answer:text});
+updateMini();safetyCheck();
+$("chatInput").disabled=true;$("send").disabled=true;
+setTimeout(askNext,200)
 }
 function finishInterview(){
-  if(interviewFinished)return;
-  interviewFinished=true;aiBusy=false;thinking(false);
-  $("chatInput").disabled=true;$("send").disabled=true;
-  setStatus("Интервью завершено","COMPLETE");
-  addMessage("ai","Спасибо. Основные сведения собраны. Теперь можно перейти к анамнезу и сводке.");
+if(interviewFinished)return;
+interviewFinished=true;aiBusy=false;thinking(false);
+$("chatInput").disabled=true;$("send").disabled=true;
+setStatus("Опрос завершён","ЗАВЕРШЕНО");
+addMessage("ai","Спасибо. Основные сведения собраны. Теперь можно перейти к анамнезу и сводке.")
 }
 $("startAI").onclick=initAI;
 $("send").onclick=sendAnswer;
-$("chatInput").addEventListener("keydown",e=>{
-  if(e.key==="Enter"){e.preventDefault();sendAnswer()}
-});
+$("chatInput").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();sendAnswer()}});
 
-/* EXTENDED SYMPTOM PATTERN DATABASE
-   These are descriptive educational patterns,
-   not validated diagnostic criteria.
-*/
+/* Расширенная учебная база симптомных шаблонов */
 const DB=[
 ["Мигренеподобная головная боль","Невролог","Голова|Лицо|Затылок","пульсир:4|тошнот:4|свет:3|звук:3|приступ:2|голов:2"],
 ["Головная боль напряжения","Терапевт / невролог","Голова|Затылок|Шея","давящ:4|сжим:4|напряж:3|устал:3|голов:2"],
@@ -812,12 +724,10 @@ const DB=[
 ["Боль вокруг глаза","Офтальмолог","Лицо|Голова","глаз:5|зрен:4|покраснен:3|свет:3|слез:3"],
 ["Боль в затылке","Терапевт / невролог","Затылок|Шея","затыл:5|шея:3|напряж:3|поворот:3|голов:2"],
 ["Боль в височной области","Терапевт / невролог","Голова","виск:5|пульсир:3|голов:3|давящ:3|приступ:2"],
-
 ["Мышечная боль в шее","Терапевт / невролог","Шея|Затылок","шея:4|поворот:4|скован:4|мышц:3|нагруз:3"],
 ["Боль в шее с распространением в руку","Невролог","Шея|Правая рука|Левая рука","шея:3|руку:4|онем:5|покалыв:4|прострел:4"],
 ["Боль в горле","Терапевт / ЛОР-врач","Шея","горло:5|глотат:4|температур:3|каш:2|першен:4"],
 ["Боль в передней части шеи","Терапевт","Шея","спереди:3|шея:4|глотан:3|припух:4|болезнен:2"],
-
 ["Мышечно-скелетная боль в груди","Терапевт","Правая грудь|Левая грудь","движ:3|нажат:4|мышц:3|нагруз:3|поворот:3"],
 ["Боль в области рёбер","Терапевт / травматолог","Правая грудь|Левая грудь","ребр:5|вдох:3|удар:4|ушиб:4|нажат:3"],
 ["Кашель и симптомы дыхательных путей","Терапевт","Правая грудь|Левая грудь|Шея","каш:5|насморк:4|температур:4|горло:3|озноб:3"],
@@ -825,7 +735,6 @@ const DB=[
 ["Давящая боль в груди","При острой боли — срочная медицинская помощь","Правая грудь|Левая грудь","груд:4|давящ:4|сжима:4|одыш:5|холодный пот:5"],
 ["Жжение за грудиной","Терапевт","Правая грудь|Левая грудь|Верх живота","изжог:5|жжен:4|грудин:4|кисл:3|еда:3"],
 ["Боль после нагрузки на грудные мышцы","Терапевт","Правая грудь|Левая грудь","трениров:5|отжиман:4|нагруз:4|мышц:4|движ:3"],
-
 ["Боль в верхней части живота","Терапевт / гастроэнтеролог","Верх живота","желуд:4|верх живота:4|тошнот:3|еда:3|эпигастр:5"],
 ["Симптомы кислотного рефлюкса","Терапевт / гастроэнтеролог","Верх живота|Правая грудь|Левая грудь","изжог:6|кисл:4|отрыж:4|после еды:3|жжен:3"],
 ["Кишечные симптомы","Терапевт / гастроэнтеролог","Низ живота|Верх живота","вздут:5|стул:4|диаре:5|запор:5|кишеч:4"],
@@ -837,7 +746,6 @@ const DB=[
 ["Боль с тошнотой и рвотой","Терапевт","Верх живота|Низ живота","тошнот:5|рвот:5|живот:3|еда:2|слабост:2"],
 ["Боль с нарушением стула","Терапевт / гастроэнтеролог","Низ живота","запор:5|диаре:5|понос:5|стул:4|спазм:3"],
 ["Боль в нижней части живота","Терапевт","Низ живота|Таз","внизу:4|низ живота:5|тянущ:3|давлен:3|спазм:3"],
-
 ["Мышечная боль в спине","Терапевт","Верх спины|Поясница","мышц:4|нагруз:4|трениров:4|ноющ:3|движ:3"],
 ["Боль в пояснице","Терапевт / невролог","Поясница","поясниц:5|наклон:4|спин:3|подъем:3|движ:3"],
 ["Боль в спине с распространением в ногу","Невролог","Поясница|Правое бедро|Левое бедро","ногу:4|прострел:5|онем:4|покалыв:4|поясниц:4"],
@@ -845,12 +753,10 @@ const DB=[
 ["Боль в боку с мочевыми симптомами","Терапевт / уролог","Поясница|Правый бок|Левый бок","моч:5|бок:3|поясниц:3|резь:4|часто:2"],
 ["Боль после длительного сидения","Терапевт","Верх спины|Поясница","сиден:5|осанк:4|стол:3|ноющ:3|напряж:3"],
 ["Боль при наклоне корпуса","Терапевт / невролог","Поясница|Верх спины","наклон:5|разгиб:3|поворот:3|движ:3|спин:3"],
-
 ["Боль в тазовой области","Терапевт","Таз|Низ живота","таз:5|внизу:3|давлен:3|тянущ:3|ходьб:2"],
 ["Симптомы мочевыводящих путей","Терапевт / уролог","Таз|Низ живота","моч:5|жжен:4|резь:4|часто:3|туалет:3"],
 ["Боль в тазобедренном суставе","Травматолог-ортопед","Таз|Правое бедро|Левое бедро","тазобедрен:6|ходьб:3|сустав:4|поворот:3|пах:3"],
 ["Боль в паховой области","Терапевт","Таз|Низ живота","пах:5|тянущ:3|движ:3|нагруз:3|припух:3"],
-
 ["Боль в плечевом суставе","Травматолог-ортопед","Правое плечо|Левое плечо","плеч:5|поднять:3|руку:3|сустав:4|движ:3"],
 ["Боль после нагрузки на руку","Терапевт / травматолог","Правая рука|Левая рука","нагруз:4|трениров:4|мышц:4|ноющ:3|спорт:3"],
 ["Боль в локте","Травматолог-ортопед","Правый локоть|Левый локоть","локт:6|сгиб:3|разгиб:3|хват:3|нагруз:3"],
@@ -859,7 +765,6 @@ const DB=[
 ["Боль в запястье","Травматолог-ортопед","Правая кисть|Левая кисть","запяст:6|мышк:3|клавиатур:3|сгиб:3|кист:3"],
 ["Боль в пальцах руки","Терапевт / травматолог","Правая кисть|Левая кисть","пальц:6|сустав:3|сгиб:3|отек:3|кист:2"],
 ["Боль в предплечье","Терапевт / травматолог","Правая рука|Левая рука","предплеч:6|нагруз:3|мышц:3|локт:3|кист:2"],
-
 ["Мышечная боль в бедре","Терапевт / травматолог","Правое бедро|Левое бедро","бедр:5|мышц:4|нагруз:4|бег:3|трениров:3"],
 ["Боль в колене","Травматолог-ортопед","Правое колено|Левое колено","колен:6|присед:4|лестниц:3|сустав:3|ходьб:3"],
 ["Боль в голени","Терапевт / травматолог","Правая голень|Левая голень","голен:5|икр:5|бег:3|нагруз:3|ходьб:3"],
@@ -869,7 +774,6 @@ const DB=[
 ["Онемение ноги","Невролог","Правое бедро|Левое бедро|Правая голень|Левая голень|Правая стопа|Левая стопа","онем:6|покалыв:5|неме:5|чувствител:4|жжен:3"],
 ["Боль после бега","Терапевт / травматолог","Правое бедро|Левое бедро|Правое колено|Левое колено|Правая голень|Левая голень","бег:5|трениров:4|нагруз:4|мышц:3|ходьб:2"],
 ["Боль в ахилловом сухожилии","Травматолог-ортопед","Правая голень|Левая голень|Правая стопа|Левая стопа","ахилл:6|пятк:3|сухожил:5|бег:3|нагруз:3"],
-
 ["Кожное раздражение","Дерматолог","","зуд:5|покраснен:5|шелуш:4|раздраж:5|кожа:3"],
 ["Кожная сыпь","Дерматолог","","сып:6|пятн:4|пузыр:4|зуд:3|высыпан:5"],
 ["Аллергические кожные симптомы","Терапевт / аллерголог","","аллерг:5|крапивниц:6|зуд:3|отек:4|сып:3"],
@@ -878,138 +782,160 @@ const DB=[
 ["Боль после травмы","Травматолог","","травм:6|паден:5|удар:5|ушиб:4|отек:3"],
 ["Отёк мягких тканей","Терапевт","","отек:6|опух:5|припух:5|увелич:3|болезнен:2"],
 ["Жжение кожи","Дерматолог","","жжен:5|кожа:4|раздраж:4|покраснен:4|зуд:3"],
-["Боль и скованность сустава","Терапевт / ревматолог","","сустав:5|скован:5|утром:3|припух:4|движ:3"]
+["Боль и скованность сустава","Терапевт / ревматолог","","сустав:5|скован:5|утром:3|припух:4|движ:3"],
+["Признаки простудного заболевания","Терапевт","","насморк:5|каш:4|горло:4|температур:4|слабост:3"],
+["Симптомы гриппоподобного заболевания","Терапевт","","температур:5|ломот:5|озноб:4|каш:3|слабост:4"],
+["Аллергический насморк","Терапевт / аллерголог","Лицо|Голова","чихан:5|насморк:5|зуд:4|пыльц:4|залож:4"],
+["Заложенность носа","ЛОР-врач","Лицо|Голова","залож:5|нос:4|насморк:4|дышат:3|слиз:3"],
+["Кашель без температуры","Терапевт","Правая грудь|Левая грудь|Шея","каш:6|сухой:4|першен:3|ночью:3|горло:2"],
+["Кашель с мокротой","Терапевт","Правая грудь|Левая грудь","каш:5|мокрот:6|слиз:3|груд:2|температур:3"],
+["Охриплость голоса","Терапевт / ЛОР-врач","Шея","голос:5|охрип:6|осип:6|горло:3|говор:3"],
+["Повышенная температура","Терапевт","","температур:6|жар:5|озноб:5|слабост:3|ломот:3"],
+["Общая слабость","Терапевт","","слабост:6|устал:5|сонлив:4|сил:3|утом:4"],
+["Головокружение","Терапевт / невролог","Голова","головокруж:6|кружит:5|шатк:4|тошнот:3|равновес:4"],
+["Нарушения сна","Терапевт","","бессонниц:6|сон:4|засып:5|просып:4|устал:3"],
+["Учащённое сердцебиение","Терапевт","Правая грудь|Левая грудь","сердцебиен:6|пульс:5|тахикард:5|быстро бьет:5|трепет:3"],
+["Повышенная потливость","Терапевт","","потлив:6|потею:5|пот:3|ночью:3|жар:3"],
+["Тошнота без выраженной боли","Терапевт","Верх живота","тошнот:6|мутит:5|рвот:3|еда:3|желуд:2"],
+["Снижение аппетита","Терапевт","","аппетит:6|не хочу есть:5|тошнот:3|слабост:3|еда:2"],
+["Сухость во рту","Терапевт","Лицо","сухость:5|сухо во рту:6|жажд:5|рот:3|пить:2"],
+["Частое мочеиспускание","Терапевт / уролог","Таз|Низ живота","часто моч:6|мочеиспуск:5|туалет:4|жажд:3|ночью:2"],
+["Покраснение глаза","Офтальмолог","Лицо","глаз:4|красн:5|слез:4|зуд:4|выделен:3"],
+["Снижение слуха","ЛОР-врач","Голова|Лицо","слух:6|слышу:5|ухо:3|залож:3|шум:4"],
+["Шум в ушах","ЛОР-врач","Голова","шум:5|звон:6|ушах:5|ухо:3|слух:3"],
+["Одышка","Терапевт; при выраженной одышке — срочная помощь","Правая грудь|Левая грудь","одыш:6|дышан:5|воздух:5|вдох:4|нагруз:3"],
+["Скованность мышц после нагрузки","Терапевт","","мышц:4|скован:5|трениров:5|нагруз:4|утром:3"],
+["Боль при длительной ходьбе","Терапевт / ортопед","Правое бедро|Левое бедро|Правое колено|Левое колено|Правая стопа|Левая стопа","ходьб:5|долго:3|устал:3|ног:4|нагруз:3"],
+["Покалывание в пальцах","Невролог","Правая кисть|Левая кисть|Правая стопа|Левая стопа","покалыв:6|пальц:5|онем:4|неме:4|чувствител:3"],
+["Локальное покраснение кожи","Дерматолог","","покраснен:6|красн:4|кожа:3|пятн:4|раздраж:3"],
+["Сухость и шелушение кожи","Дерматолог","","сухость:5|шелуш:6|кожа:4|зуд:3|трещин:4"],
+["Симптомы после физической нагрузки","Терапевт","","трениров:5|спорт:4|нагруз:5|мышц:3|устал:3"]
 ];
 
 const CONDITIONS=DB.map(([name,doctor,zones,words])=>({
-  name,doctor,
-  zones:zones?zones.split("|"):[],
-  words:words.split("|").map(item=>{
-    const index=item.lastIndexOf(":");
-    return [item.slice(0,index),Number(item.slice(index+1))];
-  })
+name,doctor,zones:zones?zones.split("|"):[],
+words:words.split("|").map(item=>{
+const index=item.lastIndexOf(":");
+return[item.slice(0,index),Number(item.slice(index+1))]
+})
 }));
 
 function calculate(){
-  save();safetyCheck();
-  const text=norm([
-    state.complaint,state.type,
-    ...state.answers.map(a=>a.answer)
-  ].join(" "));
-  return CONDITIONS.map(item=>{
-    let score=0,max=4;
-    const matches=[];
-    for(const [word,weight] of item.words){
-      max+=weight;
-      if(text.includes(norm(word))){score+=weight;matches.push(word)}
-    }
-    const zone=item.zones.find(z=>state.zones.includes(z));
-    if(zone){score+=4;matches.push(zone)}
-    return {...item,score:Math.min(95,Math.round(score/max*100)),matches};
-  }).filter(x=>x.score>=12).sort((a,b)=>b.score-a.score).slice(0,6);
+save();safetyCheck();
+const text=norm([state.complaint,state.type,...state.answers.map(a=>a.answer)].join(" "));
+return CONDITIONS.map(item=>{
+let score=0,max=4;const matches=[];
+for(const[word,weight]of item.words){
+max+=weight;
+if(text.includes(norm(word))){score+=weight;matches.push(word)}
+}
+const zone=item.zones.find(z=>state.zones.includes(z));
+if(zone){score+=4;matches.push(zone)}
+return{...item,score:Math.min(95,Math.round(score/max*100)),matches}
+}).filter(x=>x.score>=12).sort((a,b)=>b.score-a.score).slice(0,6)
 }
 function reportData(){
-  return [
-    ["Пациент",`${state.age??"—"} лет / ${state.sex||"пол не указан"}`],
-    ["Жалоба",state.complaint||"Не указана"],
-    ["Области",state.zones.join(", ")||"Не указаны"],
-    ["Боль",state.pain+"/10"],
-    ["Начало",state.duration||"Не указано"],
-    ["Характер",state.type||"Не указан"],
-    ["Интервью",state.answers.length?state.answers.map((a,i)=>`${i+1}. ${a.question}\nОтвет: ${a.answer}`).join("\n\n"):"Не проводилось"],
-    ["Режим",!interviewStarted?"Не проводилось":fallback?"Резервный алгоритм":"Локальная AI-модель"],
-    ["Хронические заболевания",state.chronic||"Не указаны"],
-    ["Препараты",state.medications||"Не указаны"],
-    ["Аллергии",state.allergies||"Не указаны"],
-    ["Дополнительно",state.additional||"Не указано"],
-    ["Важная отметка",state.important?"Обнаружены потенциально опасные симптомы":"Нет"]
-  ];
+return[
+["Пациент",`${state.age??"—"} лет / ${state.sex||"пол не указан"}`],
+["Жалоба",state.complaint||"Не указана"],
+["Области",state.zones.join(", ")||"Не указаны"],
+["Боль",state.pain+"/10"],
+["Начало",state.duration||"Не указано"],
+["Характер",state.type||"Не указан"],
+["Опрос",state.answers.length?state.answers.map((a,i)=>`${i+1}. ${a.question}\nОтвет: ${a.answer}`).join("\n\n"):"Не проводился"],
+["Режим",!interviewStarted?"Не проводился":fallback?"Резервный алгоритм":"Локальная модель ИИ"],
+["Хронические заболевания",state.chronic||"Не указаны"],
+["Препараты",state.medications||"Не указаны"],
+["Аллергии",state.allergies||"Не указаны"],
+["Дополнительно",state.additional||"Не указано"],
+["Важная отметка",state.important?"Обнаружены потенциально опасные симптомы":"Не обнаружены по ключевым словам"]
+]
 }
 $("analyze").onclick=()=>{
-  const results=calculate();
-  $("conditionResults").replaceChildren();
-  if(!results.length){
-    const p=document.createElement("p");p.className="sub";
-    p.textContent="Недостаточно данных для сопоставления с шаблонами.";
-    $("conditionResults").appendChild(p);
-  }
-  results.forEach(item=>{
-    const card=document.createElement("div");card.className="result-item";
-    const head=document.createElement("div");head.className="result-head";
-    const name=document.createElement("span");name.textContent=item.name;
-    const score=document.createElement("span");score.className="result-score";score.textContent=item.score+"%";
-    head.append(name,score);
-    const bar=document.createElement("div");bar.className="result-bar";
-    const fill=document.createElement("div");fill.style.width="0%";bar.appendChild(fill);
-    const meta=document.createElement("div");meta.className="result-meta";
-    meta.textContent="К кому обратиться: "+item.doctor+"\nСовпавшие признаки: "+(item.matches.join(", ")||"—");
-    card.append(head,bar,meta);$("conditionResults").appendChild(card);
-    requestAnimationFrame(()=>fill.style.width=item.score+"%");
-  });
-  $("reportGrid").replaceChildren();
-  reportData().forEach(([label,value])=>{
-    const cell=document.createElement("div");cell.className="report-cell";
-    const title=document.createElement("div");title.className="report-label";title.textContent=label.toUpperCase();
-    const body=document.createElement("div");body.className="report-value";body.textContent=value;
-    cell.append(title,body);$("reportGrid").appendChild(cell);
-  });
-  $("results").style.display="grid";$("download").disabled=false;
-  toast("Сводка сформирована.");
+const results=calculate();
+$("conditionResults").replaceChildren();
+if(!results.length){
+const p=document.createElement("p");p.className="sub";
+p.textContent="Недостаточно данных для сопоставления с шаблонами.";
+$("conditionResults").appendChild(p)
+}
+results.forEach(item=>{
+const card=document.createElement("div");card.className="result-item";
+const head=document.createElement("div");head.className="result-head";
+const name=document.createElement("span");name.textContent=item.name;
+const score=document.createElement("span");score.className="result-score";
+score.textContent="Совпадение";
+head.append(name,score);
+const bar=document.createElement("div");bar.className="result-bar";
+const fill=document.createElement("div");fill.style.width="0%";bar.appendChild(fill);
+const meta=document.createElement("div");meta.className="result-meta";
+meta.textContent="К кому обратиться: "+item.doctor+"\nСовпавшие признаки: "+(item.matches.join(", ")||"—");
+card.append(head,bar,meta);$("conditionResults").appendChild(card);
+requestAnimationFrame(()=>fill.style.width=item.score+"%")
+});
+$("reportGrid").replaceChildren();
+reportData().forEach(([label,value])=>{
+const cell=document.createElement("div");cell.className="report-cell";
+const title=document.createElement("div");title.className="report-label";title.textContent=label.toUpperCase();
+const body=document.createElement("div");body.className="report-value";body.textContent=value;
+cell.append(title,body);$("reportGrid").appendChild(cell)
+});
+$("results").style.display="grid";$("download").disabled=false;
+toast("Сводка сформирована.")
 };
 $("download").onclick=()=>{
-  const lines=["MEDLENS 2.1","ПРЕДВАРИТЕЛЬНАЯ СВОДКА","Учебный прототип. Не является диагнозом.",""];
-  reportData().forEach(([label,value])=>lines.push(label.toUpperCase(),value,""));
-  lines.push("ДЕМОНСТРАЦИОННЫЕ СОВПАДЕНИЯ","");
-  calculate().forEach(x=>lines.push(x.name,"Совпадение: "+x.score+"%","Специалист: "+x.doctor,""));
-  lines.push("Проценты не являются вероятностью заболевания.");
-  const blob=new Blob([lines.join("\n")],{type:"text/plain;charset=utf-8"});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");a.href=url;a.download="MedLens-report.txt";
-  document.body.appendChild(a);a.click();a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
+const lines=["МЕДАНАЛИТИК 3.0","ПРЕДВАРИТЕЛЬНАЯ СВОДКА","Учебный проект. Не является медицинским диагнозом.",""];
+reportData().forEach(([label,value])=>lines.push(label.toUpperCase(),value,""));
+lines.push("ДЕМОНСТРАЦИОННЫЕ СОВПАДЕНИЯ","");
+calculate().forEach(x=>lines.push(x.name,"Совпавшие признаки: "+x.matches.join(", "),"Специалист: "+x.doctor,""));
+lines.push("Результаты не являются диагнозом или вероятностью заболевания.");
+const blob=new Blob([lines.join("\n")],{type:"text/plain;charset=utf-8"});
+const url=URL.createObjectURL(blob);
+const a=document.createElement("a");a.href=url;a.download="MedAnalitik-otchet.txt";
+document.body.appendChild(a);a.click();a.remove();
+setTimeout(()=>URL.revokeObjectURL(url),1000)
 };
 
-/* BACKGROUND PARTICLES */
+/* Анимированные фоновые частицы */
 const canvas=$("particles"),ctx=canvas.getContext("2d");
 const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
 let particles=[],w=0,h=0;
 function resize(){
-  const dpr=Math.min(devicePixelRatio||1,2);
-  w=innerWidth;h=innerHeight;
-  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
-  ctx.setTransform(dpr,0,0,dpr,0,0);
-  particles=Array.from({length:Math.min(85,Math.floor(w/15))},()=>({
-    x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.4+.3,
-    vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25
-  }));
+const dpr=Math.min(devicePixelRatio||1,2);
+w=innerWidth;h=innerHeight;
+canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+ctx.setTransform(dpr,0,0,dpr,0,0);
+particles=Array.from({length:Math.min(90,Math.floor(w/14))},()=>({
+x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.3,
+vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28
+}))
 }
 function animate(){
-  ctx.clearRect(0,0,w,h);
-  for(const p of particles){
-    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="rgba(117,228,211,.38)";ctx.fill();
-    if(!reduced){
-      p.x=(p.x+p.vx+w)%w;p.y=(p.y+p.vy+h)%h;
-    }
-  }
-  if(!reduced)requestAnimationFrame(animate);
+ctx.clearRect(0,0,w,h);
+for(const p of particles){
+ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="rgba(117,228,211,.4)";ctx.fill();
+if(!reduced){p.x=(p.x+p.vx+w)%w;p.y=(p.y+p.vy+h)%h}
+}
+if(!reduced)requestAnimationFrame(animate)
 }
 addEventListener("resize",resize);resize();animate();
 
-/* CARD DEPTH */
+/* Объёмная реакция карточек на движение курсора */
 if(matchMedia("(hover:hover)").matches&&!reduced){
-  document.querySelectorAll(".tilt").forEach(card=>{
-    card.addEventListener("mousemove",e=>{
-      const r=card.getBoundingClientRect();
-      const x=(e.clientX-r.left)/r.width-.5;
-      const y=(e.clientY-r.top)/r.height-.5;
-      card.style.transform=`perspective(700px) rotateX(${-y*8}deg) rotateY(${x*8}deg) translateY(-3px)`;
-    });
-    card.addEventListener("mouseleave",()=>card.style.transform="");
-  });
+document.querySelectorAll(".tilt").forEach(card=>{
+card.addEventListener("mousemove",e=>{
+const r=card.getBoundingClientRect();
+const x=(e.clientX-r.left)/r.width-.5;
+const y=(e.clientY-r.top)/r.height-.5;
+card.style.transform=`perspective(700px) rotateX(${-y*9}deg) rotateY(${x*9}deg) translateY(-4px)`
+});
+card.addEventListener("mouseleave",()=>card.style.transform="")
+})
 }
 updateMini();
 </script>
 </body>
 </html>
 
+ 
